@@ -1,0 +1,721 @@
+{
+  "id": "963a806b-f543-46fd-991c-a531dd620b10",
+  "version": "2.0",
+  "name": "Portofolio Selenium Tests",
+  "url": "https://husdady.netlify.app/",
+  "tests": [{
+    "id": "e49193ce-edc5-41e5-a3db-c4fc94307500",
+    "name": "Portfolio in Spanish Language",
+    "commands": [{
+      "id": "13d66453-e5d2-4dbd-a6c7-87917fe2b27a",
+      "comment": "Open page",
+      "command": "open",
+      "target": "https://husdady.netlify.app",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bcbd504a-ce90-4545-bf06-f6568b9d97c6",
+      "comment": "Define window size",
+      "command": "setWindowSize",
+      "target": "1366x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e7a2864-faec-4956-93df-9a8ac57d4240",
+      "comment": "------------------------------ LANGUAGE ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3374c451-960e-46ea-baf7-6479925ee74a",
+      "comment": "Get language",
+      "command": "executeScript",
+      "target": "const lang = window.localStorage.getItem(\"lang\"); return JSON.parse(lang);",
+      "targets": [],
+      "value": "lang"
+    }, {
+      "id": "e3d10833-0153-4c2e-a068-1b37c593bf99",
+      "comment": "If current language is not Spanish",
+      "command": "if",
+      "target": "${lang} !== \"ES\"",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a055ad1-27bc-4bf9-be17-7e2f62edf811",
+      "comment": "Active Spanish language",
+      "command": "click",
+      "target": "xpath=//section[@id='languages']/ul/li/img",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "10a80362-0408-46fb-8e90-b8930fb64d3b",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "579abec4-b7b9-432e-964d-fe1c5282272f",
+      "comment": "Spanish flag is active",
+      "command": "assertElementPresent",
+      "target": "xpath=//section[@id='languages']/ul/li[contains(@class, 'opacity-100')]",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "27e5a5ff-6f60-45d0-b73d-fd9d74e8b24f",
+      "comment": "USA flag is desactive",
+      "command": "assertElementPresent",
+      "target": "xpath=//section[@id='languages']/ul/li[2][contains(@class, 'opacity-25')]",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5485a9ab-c052-4bee-8b0b-a04deea367f1",
+      "comment": "------------------------------ CHECK PROFILE COMPONENT ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ed0b65c7-037a-422d-8764-d785bcecfd5c",
+      "comment": "Check if profile component is showing",
+      "command": "assertElementPresent",
+      "target": "css=.tm-profile",
+      "targets": [
+        ["css=.tm-profile", "css:finder"],
+        ["xpath=//div[@id='root']/main/section", "xpath:idRelative"],
+        ["xpath=//section", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0da56a6b-796a-4e7e-8a54-7821aa7ebe43",
+      "comment": "Check profile photo",
+      "command": "assertElementPresent",
+      "target": "css=.tm-profile-picture",
+      "targets": [
+        ["css=.tm-profile-picture", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/div", "xpath:idRelative"],
+        ["xpath=//section/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "521b9c9f-3c42-455c-ab20-f5796bf7b4f2",
+      "comment": "Check profile photo url",
+      "command": "assertElementPresent",
+      "target": "xpath=//img[@alt='developer-husdady'][@src='https://i.imgur.com/1heT2kN.jpg']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2edf57ab-9a1d-4ee4-9ba6-7b8315be6a4d",
+      "comment": "Check author name - Imanol Enrique",
+      "command": "assertText",
+      "target": "css=.tm-profile-title",
+      "targets": [
+        ["css=.tm-profile-title", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Imanol Enrique')]", "xpath:innerText"]
+      ],
+      "value": "Imanol Enrique"
+    }, {
+      "id": "41818065-2abc-4f53-af1a-cb77c34d2bbc",
+      "comment": "Check location icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-map-location-dot",
+      "targets": [
+        ["css=.fa-map-location-dot", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "929fc226-187b-4100-898d-7a7073acf9c2",
+      "comment": "Check location - Piura, Perú",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section/div[2]/span",
+      "targets": [],
+      "value": "Piura, Perú"
+    }, {
+      "id": "ba5d5431-4ca5-4790-8336-f00f49c8fd9e",
+      "comment": "Check author nickname",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section/div[3]/h5",
+      "targets": [
+        ["css=h5:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/div[3]/h5", "xpath:idRelative"],
+        ["xpath=//h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'@Husdady')]", "xpath:innerText"]
+      ],
+      "value": "@Husdady"
+    }, {
+      "id": "784a3c6f-68b8-4c78-8bda-6424ec6f3ec0",
+      "comment": "Check hashtags",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section/div[3]/h5[2]",
+      "targets": [
+        ["css=.index-module_type__1pV_J", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/div[3]/h5[2]", "xpath:idRelative"],
+        ["xpath=//h5[2]", "xpath:position"],
+        ["xpath=//h5[contains(.,'#DesarrolladorJS')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "23e143e6-91d8-4fd2-94fa-12b42bdf67e9",
+      "comment": "Check description",
+      "command": "verifyText",
+      "target": "css=.tm-profile-description",
+      "targets": [
+        ["css=.tm-profile-description", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/span", "xpath:idRelative"],
+        ["xpath=//section/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Hola ✌, Soy Desarrollador Frontend, comencé a desarrollar aplicaciones desde hace 3 años, mi habilidad principal es Javascript 🙈, mi interés por el mundo de la programación empezó cuando aprendí HTML a través del curso impartido por Google: Desarrollo Web I and Desarrollo Web II.')]", "xpath:innerText"]
+      ],
+      "value": "Hola ✌, Soy Desarrollador Frontend, comencé a desarrollar aplicaciones desde hace 3 años, mi habilidad principal es Javascript 🙈, mi interés por el mundo de la programación empezó cuando aprendí HTML a través del curso impartido por Google: Desarrollo Web I and Desarrollo Web II."
+    }, {
+      "id": "2666fe18-bbb9-4302-a684-67a28ef684af",
+      "comment": "Check link course web development I",
+      "command": "verifyElementPresent",
+      "target": "xpath=//a[contains(text(),'Desarrollo Web I')]",
+      "targets": [
+        ["linkText=Desarrollo Web I", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Desarrollo Web I')]", "xpath:link"],
+        ["xpath=//div[@id='root']/main/section/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://learndigital.withgoogle.com/activate/course/web-development-I')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Desarrollo Web I')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8cf38ac-76b3-48e4-a2ec-b28b794e1cd8",
+      "comment": "Check link course web development II",
+      "command": "verifyElementPresent",
+      "target": "xpath=//a[contains(text(),'Desarrollo Web II')]",
+      "targets": [
+        ["linkText=Desarrollo Web I", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Desarrollo Web I')]", "xpath:link"],
+        ["xpath=//div[@id='root']/main/section/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://learndigital.withgoogle.com/activate/course/web-development-I')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Desarrollo Web I')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbcc062e-2222-47f0-a748-f0d70ac4b5d2",
+      "comment": "Check description part 2",
+      "command": "verifyElementPresent",
+      "target": "xpath=//div[@id='root']/main/section/span[2]",
+      "targets": [
+        ["css=span:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Empecé a ampliar mis conocimientos aprendiendo otras tecnologías como React y React native. 😋. En mi tiempo libre me gusta desarrollar aplicaciones web y móviles. 💚')]", "xpath:innerText"]
+      ],
+      "value": "Empecé a ampliar mis conocimientos aprendiendo otras tecnologías como React y React native. 😋. En mi tiempo libre me gusta desarrollar aplicaciones web y móviles. 💚"
+    }, {
+      "id": "3fc4b47a-6634-4df5-8800-7a741d464a38",
+      "comment": "Check quote left",
+      "command": "assertElementPresent",
+      "target": "css=.fa-quote-left",
+      "targets": [
+        ["css=.fa-quote-left", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "571ee7e1-a442-49c7-9213-2ab4d16dd023",
+      "comment": "Check quote right",
+      "command": "assertElementPresent",
+      "target": "css=.fa-quote-right",
+      "targets": [
+        ["css=.fa-quote-right", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "91f9e9b2-d290-4d78-87f0-e38facb83c7a",
+      "comment": "Check phrase",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section/blockquote/i",
+      "targets": [
+        ["css=i", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/blockquote/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"],
+        ["xpath=//i[contains(.,'Controlar la complejidad es la esencia de la programación')]", "xpath:innerText"]
+      ],
+      "value": "Controlar la complejidad es la esencia de la programación"
+    }, {
+      "id": "05ddd586-7583-450a-825a-4f6ed0df1dd1",
+      "comment": "Check phrase author",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section/cite",
+      "targets": [
+        ["css=.d-block:nth-child(15)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/cite", "xpath:idRelative"],
+        ["xpath=//cite", "xpath:position"],
+        ["xpath=//cite[contains(.,'- Brian Kernigan -')]", "xpath:innerText"]
+      ],
+      "value": "- Brian Kernigan -"
+    }, {
+      "id": "2400424c-f39d-4e4c-a5b1-9f16a683d07d",
+      "comment": "------------------------------ CHECK TABS COMPONENT ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "168a6946-7471-41cb-abcc-8f7157c08b14",
+      "comment": "Check tab Skills icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-jedi",
+      "targets": [
+        ["css=.fa-jedi > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab5b76d9-17c9-4472-a3a4-840d6431d4f8",
+      "comment": "Check tab Skills name",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/div/div/a/span",
+      "targets": [],
+      "value": "Habilidades"
+    }, {
+      "id": "6e905cbc-188e-4861-814f-682233c95178",
+      "comment": "Check tab Proyects icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-file-lines",
+      "targets": [
+        ["css=.fa-file-lines > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "db523c29-c702-47f7-8868-527205f56467",
+      "comment": "Check tab Proyects name",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/div/div[2]/a/span",
+      "targets": [
+        ["css=.nav-item:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Proyectos')]", "xpath:innerText"]
+      ],
+      "value": "Proyectos"
+    }, {
+      "id": "2a0db73c-2bae-4099-9e16-ad7922ee8058",
+      "comment": "Check tab Gallery icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-images",
+      "targets": [
+        ["css=.fa-images", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "70da1553-5e39-4313-b54f-ab2c475c5cb5",
+      "comment": "Check tab Gallery name",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/div/div[3]/a/span",
+      "targets": [
+        ["css=.nav-item:nth-child(3) span", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[3]/a/span", "xpath:idRelative"],
+        ["xpath=//div[3]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Galería')]", "xpath:innerText"]
+      ],
+      "value": "Galería"
+    }, {
+      "id": "16842c83-83da-404b-8bb1-fe2bf59f7513",
+      "comment": "Check tab Contact icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-address-book",
+      "targets": [
+        ["css=.fa-address-book > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0b827ca-4523-4e4e-a1c9-ce6f31f97215",
+      "comment": "Check tab Contact name",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/div/div[4]/a/span",
+      "targets": [
+        ["css=.nav-item:nth-child(4) span", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[4]/a/span", "xpath:idRelative"],
+        ["xpath=//div[4]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contacto')]", "xpath:innerText"]
+      ],
+      "value": "Contacto"
+    }]
+  }, {
+    "id": "1d605df5-89d3-4202-a59e-7bc877c89949",
+    "name": "Portfolio in English Language",
+    "commands": [{
+      "id": "d0391909-a888-41a3-ad40-ac1fcc313f4e",
+      "comment": "Open page",
+      "command": "open",
+      "target": "https://husdady.netlify.app",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "03081ff3-aa09-4b7f-b905-7c38a3a2edc6",
+      "comment": "Define window size",
+      "command": "setWindowSize",
+      "target": "1366x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "65821f21-c3bd-4d76-823f-adbb728c0404",
+      "comment": "------------------------------ LANGUAGE ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de082609-84b8-4a3a-bad2-9722a7c6239f",
+      "comment": "Get language",
+      "command": "executeScript",
+      "target": "const lang = window.localStorage.getItem(\"lang\"); return JSON.parse(lang);",
+      "targets": [],
+      "value": "lang"
+    }, {
+      "id": "270c4606-b057-4ea0-96bb-9330a882db5d",
+      "comment": "If current language is not English",
+      "command": "if",
+      "target": "${lang} !== \"EN\"",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48bec738-2e9a-4d1c-a95f-9e7d1a92fa94",
+      "comment": "Active Enlgish language",
+      "command": "click",
+      "target": "xpath=//section[@id='languages']/ul/li[2]/img",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26c0cf4c-2610-44b2-b6c6-516aaf3dc35d",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "51a55a86-f8e9-46aa-b0ab-07406954d3b5",
+      "comment": "USA flag is active",
+      "command": "assertElementPresent",
+      "target": "xpath=//section[@id='languages']/ul/li[2][contains(@class, 'opacity-100')]",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb848acd-126f-4464-b8d9-593809f058fd",
+      "comment": "Spanish flag is desactive",
+      "command": "assertElementPresent",
+      "target": "xpath=//section[@id='languages']/ul/li[contains(@class, 'opacity-25')]",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b9a896d-0483-41ab-a04c-8853b6648989",
+      "comment": "------------------------------ CHECK PROFILE COMPONENT ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0c127545-4ba9-4e64-a595-cccaf6bd441c",
+      "comment": "Check if profile component is showing",
+      "command": "assertElementPresent",
+      "target": "css=.tm-profile",
+      "targets": [
+        ["css=.tm-profile", "css:finder"],
+        ["xpath=//div[@id='root']/main/section", "xpath:idRelative"],
+        ["xpath=//section", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "761170af-3153-49fe-ac2e-7dcce76efd37",
+      "comment": "Check profile photo",
+      "command": "assertElementPresent",
+      "target": "css=.tm-profile-picture",
+      "targets": [
+        ["css=.tm-profile-picture", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/div", "xpath:idRelative"],
+        ["xpath=//section/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8d1d147-ee7f-4bbb-97e4-5774f799f752",
+      "comment": "Check profile photo url",
+      "command": "assertElementPresent",
+      "target": "xpath=//img[@alt='developer-husdady'][@src='https://i.imgur.com/1heT2kN.jpg']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "043aba85-bbb4-4089-8188-34ae250f0004",
+      "comment": "Check author name - Imanol Enrique",
+      "command": "assertText",
+      "target": "css=.tm-profile-title",
+      "targets": [
+        ["css=.tm-profile-title", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Imanol Enrique')]", "xpath:innerText"]
+      ],
+      "value": "Imanol Enrique"
+    }, {
+      "id": "d1de18f6-9cf1-43f6-8fca-0d9818bccb26",
+      "comment": "Check location icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-map-location-dot",
+      "targets": [
+        ["css=.fa-map-location-dot", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e2a1c90-a17b-43c0-ad24-004ca73a9b5a",
+      "comment": "Check location - Piura, Perú",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section/div[2]/span",
+      "targets": [],
+      "value": "Piura, Perú"
+    }, {
+      "id": "168318c8-30d2-474c-a168-3b7394ffed1f",
+      "comment": "Check author nickname",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section/div[3]/h5",
+      "targets": [
+        ["css=h5:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/div[3]/h5", "xpath:idRelative"],
+        ["xpath=//h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'@Husdady')]", "xpath:innerText"]
+      ],
+      "value": "@Husdady"
+    }, {
+      "id": "b18fd46d-5c56-4086-bb5b-0822108b6fe4",
+      "comment": "Check hashtags",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section/div[3]/h5[2]",
+      "targets": [
+        ["css=.index-module_type__1pV_J", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/div[3]/h5[2]", "xpath:idRelative"],
+        ["xpath=//h5[2]", "xpath:position"],
+        ["xpath=//h5[contains(.,'#DesarrolladorJS')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b6a61ad-5954-4d54-92c2-21623868e3bf",
+      "comment": "Check description",
+      "command": "verifyText",
+      "target": "css=.tm-profile-description",
+      "targets": [
+        ["css=.tm-profile-description", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/span", "xpath:idRelative"],
+        ["xpath=//section/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Hola ✌, Soy Desarrollador Frontend, comencé a desarrollar aplicaciones desde hace 3 años, mi habilidad principal es Javascript 🙈, mi interés por el mundo de la programación empezó cuando aprendí HTML a través del curso impartido por Google: Desarrollo Web I and Desarrollo Web II.')]", "xpath:innerText"]
+      ],
+      "value": "Hi there ✌, I am Frontend Developer, I started developing applications 3 years ago, my main skill is Javascript 🙈, my interest in the world of development began when i learned HTML through the course given by Google: Web Development I and Web Development II."
+    }, {
+      "id": "72c313e8-757f-48aa-ba18-611743bc6e17",
+      "comment": "Check link course web development I",
+      "command": "verifyElementPresent",
+      "target": "xpath=//a[contains(text(),'Web Development I')]",
+      "targets": [
+        ["linkText=Desarrollo Web I", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Desarrollo Web I')]", "xpath:link"],
+        ["xpath=//div[@id='root']/main/section/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://learndigital.withgoogle.com/activate/course/web-development-I')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Desarrollo Web I')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "54075ba2-0d6a-4080-887c-f4988fffac53",
+      "comment": "Check link course web development II",
+      "command": "verifyElementPresent",
+      "target": "xpath=//a[contains(text(),'Web Development II')]",
+      "targets": [
+        ["linkText=Desarrollo Web I", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Desarrollo Web I')]", "xpath:link"],
+        ["xpath=//div[@id='root']/main/section/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://learndigital.withgoogle.com/activate/course/web-development-I')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Desarrollo Web I')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "edb09169-37f5-4f16-ba52-792b651d0c0b",
+      "comment": "Check description part 2",
+      "command": "verifyElementPresent",
+      "target": "xpath=//div[@id='root']/main/section/span[2]",
+      "targets": [
+        ["css=span:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Empecé a ampliar mis conocimientos aprendiendo otras tecnologías como React y React native. 😋. En mi tiempo libre me gusta desarrollar aplicaciones web y móviles. 💚')]", "xpath:innerText"]
+      ],
+      "value": "I started to expand my knowledge by learning other technologies like React and React native 😋. In my free time I like to develop web and mobile applications 💚"
+    }, {
+      "id": "761ddfa3-cf36-4c43-a9e5-a4f0c97b424d",
+      "comment": "Check quote left",
+      "command": "assertElementPresent",
+      "target": "css=.fa-quote-left",
+      "targets": [
+        ["css=.fa-quote-left", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "98527f9c-7be4-4802-ae4e-4848f93a1f5d",
+      "comment": "Check quote right",
+      "command": "assertElementPresent",
+      "target": "css=.fa-quote-right",
+      "targets": [
+        ["css=.fa-quote-right", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f64cdb1-1d9d-42fd-94c1-8f443c03916a",
+      "comment": "Check phrase",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section/blockquote/i",
+      "targets": [
+        ["css=i", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/blockquote/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"],
+        ["xpath=//i[contains(.,'Controlar la complejidad es la esencia de la programación')]", "xpath:innerText"]
+      ],
+      "value": "Controlling complexity is the essence of programming"
+    }, {
+      "id": "54ef6535-6a4b-416e-b4f5-a38b9aa90f7b",
+      "comment": "Check phrase author",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section/cite",
+      "targets": [
+        ["css=.d-block:nth-child(15)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section/cite", "xpath:idRelative"],
+        ["xpath=//cite", "xpath:position"],
+        ["xpath=//cite[contains(.,'- Brian Kernigan -')]", "xpath:innerText"]
+      ],
+      "value": "- Brian Kernigan -"
+    }, {
+      "id": "1e6d7dfb-d5cf-4ca5-8ab7-1f1a3591778b",
+      "comment": "------------------------------ CHECK TABS COMPONENT ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6917edd2-1c29-4db9-bcfd-51f555eaba02",
+      "comment": "Check tab Skills icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-jedi",
+      "targets": [
+        ["css=.fa-jedi > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "eab14799-284b-4b87-a541-a261f76bd3b4",
+      "comment": "Check tab Skills name",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/div/div/a/span",
+      "targets": [],
+      "value": "Skills"
+    }, {
+      "id": "d56f000e-fb1f-4b4b-908c-f913693b399b",
+      "comment": "Check tab Proyects icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-file-lines",
+      "targets": [
+        ["css=.fa-file-lines > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a9a4224-d5b6-4dfb-8a53-8f8415f337b2",
+      "comment": "Check tab Proyects name",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/div/div[2]/a/span",
+      "targets": [
+        ["css=.nav-item:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Proyectos')]", "xpath:innerText"]
+      ],
+      "value": "Proyects"
+    }, {
+      "id": "db5b2366-ca1b-4a5c-be96-bd076c14e7b1",
+      "comment": "Check tab Gallery icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-images",
+      "targets": [
+        ["css=.fa-images", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "2bd0d90c-bb36-4cdb-862d-1bcafe50115e",
+      "comment": "Check tab Gallery name",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/div/div[3]/a/span",
+      "targets": [
+        ["css=.nav-item:nth-child(3) span", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[3]/a/span", "xpath:idRelative"],
+        ["xpath=//div[3]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Galería')]", "xpath:innerText"]
+      ],
+      "value": "Gallery"
+    }, {
+      "id": "36c7570c-4944-4f55-a7d8-1b909df5e2b9",
+      "comment": "Check tab Contact icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-address-book",
+      "targets": [
+        ["css=.fa-address-book > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "36bbacaf-cdf7-4420-8682-81e225b6dd73",
+      "comment": "Check tab Contact name",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/div/div[4]/a/span",
+      "targets": [
+        ["css=.nav-item:nth-child(4) span", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[4]/a/span", "xpath:idRelative"],
+        ["xpath=//div[4]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contacto')]", "xpath:innerText"]
+      ],
+      "value": "Contact"
+    }]
+  }],
+  "suites": [{
+    "id": "b3be0f39-efae-4d44-b2e5-5d60d380319c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e49193ce-edc5-41e5-a3db-c4fc94307500"]
+  }],
+  "urls": ["https://husdady.netlify.app/"],
+  "plugins": []
+}
