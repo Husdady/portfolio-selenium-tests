@@ -292,6 +292,20 @@
       "targets": [],
       "value": "Habilidades"
     }, {
+      "id": "27f38276-9d77-46b4-9180-60b94bfe498b",
+      "comment": "Check tab Skills is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/div/div/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "6e905cbc-188e-4861-814f-682233c95178",
       "comment": "Check tab Proyects icon",
       "command": "assertElementPresent",
@@ -354,6 +368,455 @@
         ["xpath=//span[contains(.,'Contacto')]", "xpath:innerText"]
       ],
       "value": "Contacto"
+    }, {
+      "id": "b5cc637d-e8bd-472d-a0fe-cacf110ffbe3",
+      "comment": "------------------------------ CHECK SKILL TAB ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f4e1217-9a89-46aa-a2c7-67525050b099",
+      "comment": "Check skills title",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/h2",
+      "targets": [
+        ["css=.text-danger:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'My skills as a developer')]", "xpath:innerText"]
+      ],
+      "value": "Mis habilidades como Desarrollador"
+    }, {
+      "id": "e32943cb-eaaa-496a-862c-bb21c9a8359a",
+      "comment": "Check subtitle \"Tecnologías principales:\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/h4/u",
+      "targets": [
+        ["css=.mt-3:nth-child(2) > u", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/h4/u", "xpath:idRelative"],
+        ["xpath=//u", "xpath:position"],
+        ["xpath=//u[contains(.,'Main Technologies:')]", "xpath:innerText"]
+      ],
+      "value": "Tecnologías principales:"
+    }, {
+      "id": "cc55ebb3-9e98-4e29-8c1b-34c5c50aadee",
+      "comment": "Check HTML skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6", "xpath:idRelative"],
+        ["xpath=//h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'HTML')]", "xpath:innerText"]
+      ],
+      "value": "HTML"
+    }, {
+      "id": "1f1f6804-514a-44a3-8970-a598508be10c",
+      "comment": "Check CSS skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[2]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[2]", "xpath:idRelative"],
+        ["xpath=//h6[2]", "xpath:position"],
+        ["xpath=//h6[contains(.,'CSS')]", "xpath:innerText"]
+      ],
+      "value": "CSS"
+    }, {
+      "id": "1c2d8b47-24c3-4339-a382-cf8ea4b90e18",
+      "comment": "Check Javascript skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[3]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(5)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[3]", "xpath:idRelative"],
+        ["xpath=//h6[3]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Javascript')]", "xpath:innerText"]
+      ],
+      "value": "Javascript"
+    }, {
+      "id": "0eb58a0c-270e-443f-8d51-f5b7b0118bbb",
+      "comment": "Check Jquery skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[4]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[4]", "xpath:idRelative"],
+        ["xpath=//h6[4]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Jquery')]", "xpath:innerText"]
+      ],
+      "value": "Jquery"
+    }, {
+      "id": "e8e19891-bb2a-4f21-b775-b507808898a5",
+      "comment": "Scroll 300 bottom Main skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[0]; mainSkills.scrollTop = 300;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a4d47b1-e990-4c38-b094-286d0e29de2b",
+      "comment": "Check React.js skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "React.js"
+    }, {
+      "id": "cb85a741-7c46-45ec-93d3-5b7ef7e003c2",
+      "comment": "Check React Native skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[6]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "React Native"
+    }, {
+      "id": "dc3d211a-95fd-416c-8787-16755b598421",
+      "comment": "Check Redux skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[7]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Redux"
+    }, {
+      "id": "5c834691-5ffd-416a-98e0-d23ff4ef7380",
+      "comment": "Check Strapi skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[8]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Strapi"
+    }, {
+      "id": "8710ac74-5abc-4dbe-a932-40468700fc21",
+      "comment": "Scroll 580 bottom Main skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[0]; mainSkills.scrollTop = 290 * 2;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15a6769d-8c68-468e-aebc-6b2051c4b572",
+      "comment": "Check Node skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[9]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Node"
+    }, {
+      "id": "75bd70b8-3ec2-4c69-8972-c559820eba31",
+      "comment": "Check Express skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[10]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Express"
+    }, {
+      "id": "54081f21-d5b2-478b-acd8-21b25431dc2a",
+      "comment": "Check GraphQL skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[11]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "GraphQL"
+    }, {
+      "id": "520333c8-c0ef-48a6-918a-70dbf45c11c8",
+      "comment": "Check Vue.js skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[12]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Vue.js"
+    }, {
+      "id": "96951ba0-4521-4b2b-9c70-f7b55b6abfe2",
+      "comment": "Scroll 870 bottom Main skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[0]; mainSkills.scrollTop = 290 * 3;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd33e258-8bd1-4863-a845-9672c761a3d4",
+      "comment": "Check Ant Design skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[13]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Ant Design"
+    }, {
+      "id": "b22b1661-e528-41da-b6df-a979c6999e09",
+      "comment": "Check Typescript skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[14]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Typescript"
+    }, {
+      "id": "55f401db-519a-4c7b-a1f4-fd6c5b66e018",
+      "comment": "Check Git skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[15]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Git"
+    }, {
+      "id": "ad03b5bd-db9d-4c57-bf1e-228b3865277b",
+      "comment": "Check Bootstrap skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[16]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Bootstrap"
+    }, {
+      "id": "a1865e03-d4df-4094-83f8-556255756d31",
+      "comment": "Scroll to bottom Main skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[0]; mainSkills.scrollTop = mainSkills.scrollHeight;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bb2fb399-eaca-4b11-90dd-eafe007e2f80",
+      "comment": "Check subtitle \"Tecnologías básicas\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/h4[2]/u",
+      "targets": [
+        ["css=.mt-3:nth-child(4) > u", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/h4[2]/u", "xpath:idRelative"],
+        ["xpath=//h4[2]/u", "xpath:position"],
+        ["xpath=//u[contains(.,'Basic Technologies:')]", "xpath:innerText"]
+      ],
+      "value": "Tecnologías básicas:"
+    }, {
+      "id": "b4b6f551-357d-4816-9b6d-87481bcef89f",
+      "comment": "Scroll to bottom page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, document.body.scrollHeight);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "62fd8770-bfbb-449c-b005-8c3051649818",
+      "comment": "Check Jade skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6", "xpath:idRelative"],
+        ["xpath=//section[2]/h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'Jade')]", "xpath:innerText"]
+      ],
+      "value": "Jade"
+    }, {
+      "id": "7938000d-ffba-44d7-9ce8-cf306c70880e",
+      "comment": "Check Sass skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[2]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[2]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[2]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Sass')]", "xpath:innerText"]
+      ],
+      "value": "Sass"
+    }, {
+      "id": "58e23eab-8cf6-4788-be9d-18d21493068c",
+      "comment": "Check Webpack skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[3]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(5)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[3]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[3]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Webpack')]", "xpath:innerText"]
+      ],
+      "value": "Webpack"
+    }, {
+      "id": "c0887eec-ed9c-44c5-82cb-dd9d800ca9c3",
+      "comment": "Check Material UI skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[4]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[4]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[4]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Material UI')]", "xpath:innerText"]
+      ],
+      "value": "Material UI"
+    }, {
+      "id": "e0d06ad4-ea80-47f6-8588-6458d36943f2",
+      "comment": "Scroll 300 bottom Basic skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[1]; mainSkills.scrollTop = 300;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "243879d0-05e8-4224-9910-bb0b9bf465ea",
+      "comment": "Check Python skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[5]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[5]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Python')]", "xpath:innerText"]
+      ],
+      "value": "Python"
+    }, {
+      "id": "7c23aaca-6d14-4508-ab58-a8a344111a0d",
+      "comment": "Check Eslint skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[6]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(11)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[6]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[6]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Eslint')]", "xpath:innerText"]
+      ],
+      "value": "Eslint"
+    }, {
+      "id": "389547c3-6b0c-45b0-a014-1a55a70ace66",
+      "comment": "Check Prettier skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[7]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(13)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[7]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[7]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Prettier')]", "xpath:innerText"]
+      ],
+      "value": "Prettier"
+    }, {
+      "id": "eded890f-ee49-4be6-a103-6295f019df9b",
+      "comment": "Check Jest skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[8]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(15)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[8]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[8]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Jest')]", "xpath:innerText"]
+      ],
+      "value": "Jest"
+    }, {
+      "id": "46f5f31d-ea72-4481-bb79-13a211e2077f",
+      "comment": "Scroll 580 bottom Basic skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[1]; mainSkills.scrollTop = 290 * 2;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4433ff7e-6458-442f-bcc1-22b03e1e1ebd",
+      "comment": "Check Jenkins skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[9]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(17)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[9]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[9]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Jenkins')]", "xpath:innerText"]
+      ],
+      "value": "Jenkins"
+    }, {
+      "id": "6096ba09-504d-400f-a30c-78fb59b1c272",
+      "comment": "Check Nest.js skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[10]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(19)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[10]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[10]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Nest.js')]", "xpath:innerText"]
+      ],
+      "value": "Nest.js"
+    }, {
+      "id": "f67f2e21-b2d3-48fc-961b-980ba752b5d6",
+      "comment": "Check Selenium Python skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[11]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(21)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[11]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[11]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Selenium Python')]", "xpath:innerText"]
+      ],
+      "value": "Selenium Python"
+    }, {
+      "id": "34c96ce1-4aba-4cb5-8235-77a21c17d00c",
+      "comment": "Check NRQL skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[12]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(23)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[12]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[12]", "xpath:position"],
+        ["xpath=//h6[contains(.,'NRQL')]", "xpath:innerText"]
+      ],
+      "value": "NRQL"
+    }, {
+      "id": "87189770-40b2-40c2-be4d-c2ff8da72e96",
+      "comment": "------------------------------ CHECK PROYECTS TAB ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "821b0bdf-6c62-4695-90f6-c346d874537c",
+      "comment": "------------------------------ CHECK GALLERY TAB ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f0bce46-447e-4128-9079-620a725a78d3",
+      "comment": "------------------------------ CHECK CONTACT TAB ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "1d605df5-89d3-4202-a59e-7bc877c89949",
@@ -644,6 +1107,20 @@
       "targets": [],
       "value": "Skills"
     }, {
+      "id": "829d2741-0fd7-4f1a-bfad-ecf84bd05ab6",
+      "comment": "Check tab Skills is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/div/div/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "d56f000e-fb1f-4b4b-908c-f913693b399b",
       "comment": "Check tab Proyects icon",
       "command": "assertElementPresent",
@@ -706,6 +1183,455 @@
         ["xpath=//span[contains(.,'Contacto')]", "xpath:innerText"]
       ],
       "value": "Contact"
+    }, {
+      "id": "7898eedd-8258-4c48-a3a3-34c497d38de6",
+      "comment": "------------------------------ CHECK SKILL TAB ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bc1e110-ea06-4d2d-a716-b92c9899b7d3",
+      "comment": "Check skills title",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/h2",
+      "targets": [
+        ["css=.text-danger:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'My skills as a developer')]", "xpath:innerText"]
+      ],
+      "value": "My skills as a developer"
+    }, {
+      "id": "4fdf2b84-2b65-4960-84b3-78b83a92c02c",
+      "comment": "Check subtitle \"Main Technologies\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/h4/u",
+      "targets": [
+        ["css=.mt-3:nth-child(2) > u", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/h4/u", "xpath:idRelative"],
+        ["xpath=//u", "xpath:position"],
+        ["xpath=//u[contains(.,'Main Technologies:')]", "xpath:innerText"]
+      ],
+      "value": "Main Technologies:"
+    }, {
+      "id": "dfeece11-72c8-431a-8c87-83d87be15dd6",
+      "comment": "Check HTML skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6", "xpath:idRelative"],
+        ["xpath=//h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'HTML')]", "xpath:innerText"]
+      ],
+      "value": "HTML"
+    }, {
+      "id": "7cae3500-b6fb-40c7-9ec8-1a022d386e43",
+      "comment": "Check CSS skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[2]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[2]", "xpath:idRelative"],
+        ["xpath=//h6[2]", "xpath:position"],
+        ["xpath=//h6[contains(.,'CSS')]", "xpath:innerText"]
+      ],
+      "value": "CSS"
+    }, {
+      "id": "bd7d2fd8-39b0-4be5-81f2-4721c3a177c0",
+      "comment": "Check Javascript skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[3]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(5)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[3]", "xpath:idRelative"],
+        ["xpath=//h6[3]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Javascript')]", "xpath:innerText"]
+      ],
+      "value": "Javascript"
+    }, {
+      "id": "d3d13609-ce6e-47e2-8e13-24bd6e255ab0",
+      "comment": "Check Jquery skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[4]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[4]", "xpath:idRelative"],
+        ["xpath=//h6[4]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Jquery')]", "xpath:innerText"]
+      ],
+      "value": "Jquery"
+    }, {
+      "id": "dbd61baf-09f8-4300-a433-4de7a6730a33",
+      "comment": "Scroll 300 bottom Main skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[0]; mainSkills.scrollTop = 300;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "85bc518a-0ddb-49cb-8796-c8fc1456df3a",
+      "comment": "Check React.js skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "React.js"
+    }, {
+      "id": "eef3bdb9-17ca-436c-a821-7d6336a2c04d",
+      "comment": "Check React Native skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[6]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "React Native"
+    }, {
+      "id": "597f37af-1b53-414f-89b6-542328bf2f83",
+      "comment": "Check Redux skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[7]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Redux"
+    }, {
+      "id": "5fc0c5d7-e438-4d8b-ae95-4624fe367dc7",
+      "comment": "Check Strapi skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[8]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Strapi"
+    }, {
+      "id": "56dd7b5e-961a-4a0b-b246-f280157b655b",
+      "comment": "Scroll 580 bottom Main skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[0]; mainSkills.scrollTop = 290 * 2;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3a6245ae-1809-43fc-bfe5-2cc8a5ac60fc",
+      "comment": "Check Node skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[9]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Node"
+    }, {
+      "id": "a1240fa6-3dcf-42f5-a1c6-8f168d4f1b60",
+      "comment": "Check Express skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[10]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Express"
+    }, {
+      "id": "2bd85c07-828e-4155-adee-ace267fd1464",
+      "comment": "Check GraphQL skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[11]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "GraphQL"
+    }, {
+      "id": "a0af109c-3625-487a-9246-f456cff65083",
+      "comment": "Check Vue.js skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[12]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Vue.js"
+    }, {
+      "id": "cdf49895-7702-4a2f-98c2-9aac32b9a277",
+      "comment": "Scroll 870 bottom Main skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[0]; mainSkills.scrollTop = 290 * 3;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81ccca83-35e3-4ebb-bd3b-187e5a594af3",
+      "comment": "Check Ant Design skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[13]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Ant Design"
+    }, {
+      "id": "7dc7b943-2df7-454d-aa62-6b5ed4f5eccd",
+      "comment": "Check Typescript skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[14]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Typescript"
+    }, {
+      "id": "bd2be431-c4f3-474c-a905-0bd06fef3351",
+      "comment": "Check Git skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[15]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Git"
+    }, {
+      "id": "0c3b7d86-8a22-48d1-a8ce-cc8083ad7fa1",
+      "comment": "Check Bootstrap skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section/h6[16]",
+      "targets": [
+        ["css=.py-3:nth-child(3) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section/h6[5]", "xpath:idRelative"],
+        ["xpath=//h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'React.js')]", "xpath:innerText"]
+      ],
+      "value": "Bootstrap"
+    }, {
+      "id": "f71103f4-1b42-42d9-bffb-a3f4ac367c02",
+      "comment": "Scroll to bottom Main skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[0]; mainSkills.scrollTop = mainSkills.scrollHeight;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9d29e6a0-0293-48be-a0a3-dbd18d38b134",
+      "comment": "Check subtitle \"Basic Technologies\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/h4[2]/u",
+      "targets": [
+        ["css=.mt-3:nth-child(4) > u", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/h4[2]/u", "xpath:idRelative"],
+        ["xpath=//h4[2]/u", "xpath:position"],
+        ["xpath=//u[contains(.,'Basic Technologies:')]", "xpath:innerText"]
+      ],
+      "value": "Basic Technologies:"
+    }, {
+      "id": "537e9bf8-9822-4416-b7de-28bb84cbe901",
+      "comment": "Scroll to bottom page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, document.body.scrollHeight);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "726ead03-8118-4ebb-bfcf-262f45600c61",
+      "comment": "Check Jade skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6", "xpath:idRelative"],
+        ["xpath=//section[2]/h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'Jade')]", "xpath:innerText"]
+      ],
+      "value": "Jade"
+    }, {
+      "id": "b055563a-ce4e-4132-8d43-3f9f3564625d",
+      "comment": "Check Sass skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[2]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[2]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[2]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Sass')]", "xpath:innerText"]
+      ],
+      "value": "Sass"
+    }, {
+      "id": "82718dc1-0db7-4a45-8716-90a1e79db286",
+      "comment": "Check Webpack skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[3]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(5)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[3]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[3]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Webpack')]", "xpath:innerText"]
+      ],
+      "value": "Webpack"
+    }, {
+      "id": "2ac90ac1-b7e1-4d58-8f33-087aa0f25d6d",
+      "comment": "Check Material UI skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[4]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(7)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[4]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[4]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Material UI')]", "xpath:innerText"]
+      ],
+      "value": "Material UI"
+    }, {
+      "id": "be2c464e-b892-4f84-afb7-248984b952e8",
+      "comment": "Scroll 300 bottom Basic skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[1]; mainSkills.scrollTop = 300;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "feb23093-7248-4146-92e8-881330f8e72d",
+      "comment": "Check Python skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[5]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[5]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[5]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Python')]", "xpath:innerText"]
+      ],
+      "value": "Python"
+    }, {
+      "id": "9226768d-1c53-41b7-bb75-ee76ad0602f4",
+      "comment": "Check Eslint skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[6]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(11)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[6]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[6]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Eslint')]", "xpath:innerText"]
+      ],
+      "value": "Eslint"
+    }, {
+      "id": "6343fcb7-6965-48e6-ad13-ebc10a5de3e9",
+      "comment": "Check Prettier skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[7]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(13)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[7]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[7]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Prettier')]", "xpath:innerText"]
+      ],
+      "value": "Prettier"
+    }, {
+      "id": "e2c8ed88-ad45-4d36-bc15-89b858d60af4",
+      "comment": "Check Jest skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[8]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(15)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[8]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[8]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Jest')]", "xpath:innerText"]
+      ],
+      "value": "Jest"
+    }, {
+      "id": "398c0168-0958-44ef-ae24-86a7fcf9eaf9",
+      "comment": "Scroll 580 bottom Basic skills container",
+      "command": "executeScript",
+      "target": "const sections = document.querySelectorAll('section.container'); const mainSkills = sections[1]; mainSkills.scrollTop = 290 * 2;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9693ad41-e677-4890-9194-e60f090c7b98",
+      "comment": "Check Jenkins skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[9]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(17)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[9]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[9]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Jenkins')]", "xpath:innerText"]
+      ],
+      "value": "Jenkins"
+    }, {
+      "id": "53e1c4ed-38f0-4733-84d6-ccb63ac1acb1",
+      "comment": "Check Nest.js skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[10]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(19)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[10]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[10]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Nest.js')]", "xpath:innerText"]
+      ],
+      "value": "Nest.js"
+    }, {
+      "id": "f7554ba4-7318-4260-bbb9-749f7e040c26",
+      "comment": "Check Selenium Python skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[11]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(21)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[11]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[11]", "xpath:position"],
+        ["xpath=//h6[contains(.,'Selenium Python')]", "xpath:innerText"]
+      ],
+      "value": "Selenium Python"
+    }, {
+      "id": "ba892963-2fac-407b-9c5c-f990dea41b2e",
+      "comment": "Check NRQL skill",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[12]",
+      "targets": [
+        ["css=.py-3:nth-child(5) > .mb-1:nth-child(23)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/section[2]/h6[12]", "xpath:idRelative"],
+        ["xpath=//section[2]/h6[12]", "xpath:position"],
+        ["xpath=//h6[contains(.,'NRQL')]", "xpath:innerText"]
+      ],
+      "value": "NRQL"
+    }, {
+      "id": "bab29c01-d862-47e5-bd9e-9a192d6f7e30",
+      "comment": "------------------------------ CHECK PROYECTS TAB ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9b29e946-2ab1-49bf-993c-8fbcca79de25",
+      "comment": "------------------------------ CHECK GALLERY TAB ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "674e8f4d-707b-4f2e-87ba-eae1ad7e8940",
+      "comment": "------------------------------ CHECK CONTACT TAB ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }],
   "suites": [{
