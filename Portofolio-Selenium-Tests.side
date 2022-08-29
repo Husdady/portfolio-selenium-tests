@@ -288,14 +288,21 @@
       "id": "ab5b76d9-17c9-4472-a3a4-840d6431d4f8",
       "comment": "Check tab Skills name",
       "command": "assertText",
-      "target": "xpath=//div[@id='root']/main/section[2]/div/div/a/span",
-      "targets": [],
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li/a",
+      "targets": [
+        ["linkText=Habilidades", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Habilidades')]", "xpath:innerText"]
+      ],
       "value": "Habilidades"
     }, {
       "id": "27f38276-9d77-46b4-9180-60b94bfe498b",
       "comment": "Check tab Skills is actived",
       "command": "assertElementPresent",
-      "target": "xpath=//div[@id='root']/main/section[2]/div/div/a[contains(@class, 'active')]",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li/a[contains(@class, 'active')]",
       "targets": [
         ["linkText=Skills", "linkText"],
         ["css=.active", "css:finder"],
@@ -318,7 +325,7 @@
       "id": "db523c29-c702-47f7-8868-527205f56467",
       "comment": "Check tab Proyects name",
       "command": "assertText",
-      "target": "xpath=//div[@id='root']/main/section[2]/div/div[2]/a/span",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[2]/a/span",
       "targets": [
         ["css=.nav-item:nth-child(2) span", "css:finder"],
         ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a/span", "xpath:idRelative"],
@@ -339,7 +346,7 @@
       "id": "70da1553-5e39-4313-b54f-ab2c475c5cb5",
       "comment": "Check tab Gallery name",
       "command": "assertText",
-      "target": "xpath=//div[@id='root']/main/section[2]/div/div[3]/a/span",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[3]/a/span",
       "targets": [
         ["css=.nav-item:nth-child(3) span", "css:finder"],
         ["xpath=//div[@id='root']/main/section[2]/div/div[3]/a/span", "xpath:idRelative"],
@@ -360,7 +367,7 @@
       "id": "b0b827ca-4523-4e4e-a1c9-ce6f31f97215",
       "comment": "Check tab Contact name",
       "command": "assertText",
-      "target": "xpath=//div[@id='root']/main/section[2]/div/div[4]/a/span",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[4]/a/span",
       "targets": [
         ["css=.nav-item:nth-child(4) span", "css:finder"],
         ["xpath=//div[@id='root']/main/section[2]/div/div[4]/a/span", "xpath:idRelative"],
@@ -804,6 +811,276 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "aa4e59ba-8414-4209-a17f-4900984429e9",
+      "comment": "Scroll to top page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, 0);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c71f889d-0305-45cf-a601-b52861cb6a68",
+      "comment": "Select Proyects tab",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[2]/a",
+      "targets": [
+        ["linkText=Proyects", "linkText"],
+        ["css=.nav-item:nth-child(2) > .bg-transparent", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proyects')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e928b979-ab59-4504-8f30-bc51fd8fb9e3",
+      "comment": "Check tab Proyects is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[2]/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b91a2a9-e604-4145-a3bd-10dd60eacca7",
+      "comment": "Check tab title",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/article/h2",
+      "targets": [
+        ["css=.text-danger:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Projects I have done as a developer')]", "xpath:innerText"]
+      ],
+      "value": "Proyectos que he realizado como desarrollador"
+    }, {
+      "id": "a9ee916d-b734-437f-b4ca-f2f2042bb7ac",
+      "comment": "Check subtitle \"Proyectos principales\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/article/h4",
+      "targets": [
+        ["css=.my-4:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Main Proyects:')]", "xpath:innerText"]
+      ],
+      "value": "Proyectos principales:"
+    }, {
+      "id": "92dd9f95-c874-4208-94dd-be4adb72493d",
+      "comment": "Check proyect \"Emprendimiento y Salud\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(1) > .proyect-title",
+      "targets": [
+        ["css=.proyects:nth-child(3) > .proyect:nth-child(1) > .proyect-title > .mb-0", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/section/article/div/h6", "xpath:idRelative"],
+        ["xpath=//h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'Emprendimiento y Salud')]", "xpath:innerText"]
+      ],
+      "value": "Emprendimiento y Salud"
+    }, {
+      "id": "f6eabc8d-4ec0-4794-8177-fba6aae5b6ca",
+      "comment": "Check proyect \"CMS - Emprendimiento y Salud\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(2) > .proyect-title",
+      "targets": [],
+      "value": "CMS - Emprendimiento y Salud"
+    }, {
+      "id": "56dc28aa-1de3-4a07-ba61-a8caa0632f53",
+      "comment": "Check proyect \"Nutrición y Salud Personal\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(3) > .proyect-title",
+      "targets": [],
+      "value": "Nutrición y Salud Personal"
+    }, {
+      "id": "2fb35dba-f874-4857-9b71-0fbf65430261",
+      "comment": "Scroll 180 bottom Main proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const mainProyects = proyects[0]; mainProyects.scrollTop = 180;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48d54768-4635-4329-b550-4b3e62007784",
+      "comment": "Check proyect \"Multiservicios Espay\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(4) > .proyect-title",
+      "targets": [],
+      "value": "Multiservicios Espay"
+    }, {
+      "id": "fb01449a-2746-4a98-acd9-7e7e052061cf",
+      "comment": "Check proyect \"CMS - Multiservicios Espay\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(5) > .proyect-title",
+      "targets": [],
+      "value": "CMS - Multiservicios Espay"
+    }, {
+      "id": "fad7bd20-8f3d-4700-902a-622343a780df",
+      "comment": "Check proyect \"Intellitec\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(6) > .proyect-title",
+      "targets": [],
+      "value": "Intellitec"
+    }, {
+      "id": "42a32ce8-a56a-4a17-8533-7273445308da",
+      "comment": "Scroll 360 bottom Main proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const mainProyects = proyects[0]; mainProyects.scrollTop = 180 * 2;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "016e7e35-48bc-4c59-8113-38475f88ea82",
+      "comment": "Check proyect \"Movies Awards Ballot\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(7) > .proyect-title",
+      "targets": [],
+      "value": "Movies Awards Ballot"
+    }, {
+      "id": "eb51166a-26f2-473f-b6db-92f999270b00",
+      "comment": "Check proyect \"Pokemon Mistery Dungeon\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(8) > .proyect-title",
+      "targets": [],
+      "value": "Pokemon Mistery Dungeon"
+    }, {
+      "id": "dba74093-f8a7-4c72-a7f3-e636939c15cd",
+      "comment": "Check proyect \"Pathpoint\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(9) > .proyect-title",
+      "targets": [],
+      "value": "Pathpoint"
+    }, {
+      "id": "0b029a96-966a-42f6-a1c1-b35c7832c598",
+      "comment": "Scroll 540 bottom Main proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const mainProyects = proyects[0]; mainProyects.scrollTop = 180 * 3;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d258b00-4913-4730-98e0-7a3bf88bf431",
+      "comment": "Check proyect \"Selenium IDE Tests\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(10) > .proyect-title",
+      "targets": [],
+      "value": "Selenium IDE Tests"
+    }, {
+      "id": "14119603-327c-4c39-a34a-7eaae6381222",
+      "comment": "Check proyect \"Age of Empires II\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(11) > .proyect-title",
+      "targets": [],
+      "value": "Age of Empires II"
+    }, {
+      "id": "014c54d9-3b32-4f49-b259-0eec1ee0f442",
+      "comment": "Check proyect \"API Whatsapp\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(12) > .proyect-title",
+      "targets": [],
+      "value": "API Whatsapp"
+    }, {
+      "id": "58748295-d2f5-46a8-bffd-21640336e9ab",
+      "comment": "Scroll to bottom Main proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const mainProyects = proyects[1]; mainProyects.scrollTop = mainProyects.scrollHeight;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "703b54b8-4f2d-46c2-bf83-89d94cff8f7e",
+      "comment": "Check proyect \"Services TODO List\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(13) > .proyect-title",
+      "targets": [],
+      "value": "Services TODO List"
+    }, {
+      "id": "a029d0e3-ce9c-4d74-b7e9-10b15b9856f0",
+      "comment": "Scroll to bottom page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, document.body.scrollHeight);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84ed23c5-8e8b-4dca-ba05-52ec450e0e65",
+      "comment": "Check subtitle \"Proyectos personales\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/article/h4[2]",
+      "targets": [
+        ["css=.my-4:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/h4[2]", "xpath:idRelative"],
+        ["xpath=//h4[2]", "xpath:position"],
+        ["xpath=//h4[contains(.,'Personal Proyects:')]", "xpath:innerText"]
+      ],
+      "value": "Proyectos personales:"
+    }, {
+      "id": "cfb3f2da-f872-4a4f-adb1-f24a57d9a113",
+      "comment": "Check proyect \"Universal Pokedex\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(1) > .proyect-title",
+      "targets": [
+        ["css=.proyects:nth-child(5) > .proyect:nth-child(1) .mb-0", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/section[2]/div/section[2]/h6", "xpath:idRelative"],
+        ["xpath=//section[2]/div/section[2]/h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'Universal Pokedex')]", "xpath:innerText"]
+      ],
+      "value": "Universal Pokedex"
+    }, {
+      "id": "07a33d47-9e00-4547-878d-58e64ea06ae3",
+      "comment": "Check proyect \"Calculadora\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(2) > .proyect-title",
+      "targets": [],
+      "value": "Calculadora"
+    }, {
+      "id": "656bda75-d424-425c-b08c-bf66cd491a2e",
+      "comment": "Check proyect \"¿Cuánto sabes sobre el universo?\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(3) > .proyect-title",
+      "targets": [],
+      "value": "¿Cuánto sabes sobre el universo?"
+    }, {
+      "id": "180a82ae-5eda-4bb2-b3db-2eaa141142da",
+      "comment": "Scroll 180 bottom Personal proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const personalProyects = proyects[1]; personalProyects.scrollTop = 180;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23997a3f-2ddb-40b5-8868-a0e6345642fd",
+      "comment": "Check proyect \"Creador de amistades\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(4) > .proyect-title",
+      "targets": [],
+      "value": "Creador de amistades"
+    }, {
+      "id": "025ba25f-2876-4c28-bc97-1723d9689793",
+      "comment": "Check proyect \"Simulador de compras\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(5) > .proyect-title",
+      "targets": [],
+      "value": "Simulador de compras"
+    }, {
+      "id": "de3081a7-aae7-4773-83e1-a20314a095f4",
+      "comment": "Check proyect \"¿Cómo validar un formulario?\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(6) > .proyect-title",
+      "targets": [],
+      "value": "¿Cómo validar un formulario?"
+    }, {
+      "id": "709108da-a1f4-4745-8952-56ecccafc436",
+      "comment": "Scroll to bottom Personal proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const personalProyects = proyects[1]; personalProyects.scrollTop = personalProyects.scrollHeight;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2820a3c7-1fb5-4ed8-8e7d-870584b3b90d",
+      "comment": "Check proyect \"Medyfie\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(7) > .proyect-title",
+      "targets": [],
+      "value": "Medyfie"
+    }, {
       "id": "821b0bdf-6c62-4695-90f6-c346d874537c",
       "comment": "------------------------------ CHECK GALLERY TAB ------------------------------",
       "command": "",
@@ -811,8 +1088,360 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "0fe9a177-a763-45de-b2bf-38707d77bc52",
+      "comment": "Scroll to top page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, 0);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba2ada19-ea57-4260-ab94-759e9714db1b",
+      "comment": "Select Gallery tab",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[3]/a",
+      "targets": [
+        ["linkText=Proyects", "linkText"],
+        ["css=.nav-item:nth-child(2) > .bg-transparent", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proyects')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "82ca6f67-cede-4044-993c-8e022159c7d0",
+      "comment": "Check tab Gallery is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[3]/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e1b6840-8ec4-4301-807d-161bd0c37c8f",
+      "comment": "Check tab title",
+      "command": "assertText",
+      "target": "css=.text-danger:nth-child(1)",
+      "targets": [
+        ["css=.text-danger:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Projects I have done as a developer')]", "xpath:innerText"]
+      ],
+      "value": "Galeria de fotos sobre mí"
+    }, {
       "id": "5f0bce46-447e-4128-9079-620a725a78d3",
       "comment": "------------------------------ CHECK CONTACT TAB ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84367999-58ae-460f-9d2c-70a26a4273b9",
+      "comment": "Select Contact tab",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[4]/a",
+      "targets": [
+        ["linkText=Proyects", "linkText"],
+        ["css=.nav-item:nth-child(2) > .bg-transparent", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proyects')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4b9c081-26a1-4560-8e83-47b6ff94b2fe",
+      "comment": "Check tab Contact is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[4]/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca0cfd7c-8887-4c62-af69-de5eafc48ba4",
+      "comment": "Check tab title",
+      "command": "assertText",
+      "target": "css=.text-danger:nth-child(1)",
+      "targets": [
+        ["css=.text-danger:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Projects I have done as a developer')]", "xpath:innerText"]
+      ],
+      "value": "¿Deseas contactarme?"
+    }, {
+      "id": "7d22ba1a-a929-4aca-b97d-599f338c081d",
+      "comment": "Check fullname is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64d0cbdc-8c1d-406f-aaeb-8ce24e796554",
+      "comment": "Check email is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(2)",
+      "targets": [
+        ["css=.form-control:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@value=''])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db204fe1-0b0e-4f28-9e69-5b6d5bc3275c",
+      "comment": "Check optional message is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a1a721a-6f92-4f50-8eb9-95f2864c8d66",
+      "comment": "Check submit button",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/button",
+      "targets": [
+        ["css=.mt-4", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Send message')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "322928c6-c8b3-45fc-99ff-a8ea28961364",
+      "comment": "Check submit button icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-paper-plane",
+      "targets": [
+        ["css=.fa-paper-plane > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "76c9f6ea-3868-489d-9107-461cacf92940",
+      "comment": "Check submit button title",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/button/span",
+      "targets": [
+        ["css=.mt-4 > .ms-2", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Send message')]", "xpath:innerText"]
+      ],
+      "value": "Enviar mensaje"
+    }, {
+      "id": "30fe6936-1325-4fc6-a8c7-128a9bd54bd4",
+      "comment": "Scroll to bottom page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, document.body.scrollHeight);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "930e0e0d-1f51-44b3-8940-40c68274e7be",
+      "comment": "Check subtitle \"Mis redes sociales\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/section/h2",
+      "targets": [
+        ["css=.mt-2 > .text-danger", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section/h2", "xpath:idRelative"],
+        ["xpath=//section/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'My social networks::')]", "xpath:innerText"]
+      ],
+      "value": "Mis redes sociales:"
+    }, {
+      "id": "92cc5047-e159-4935-a30f-e4dca087dfbb",
+      "comment": "Check Whatsapp network",
+      "command": "assertElementPresent",
+      "target": "css=.social:nth-child(1)",
+      "targets": [
+        ["css=.social:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section/div/span", "xpath:idRelative"],
+        ["xpath=//section/section/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Whatsapp')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a252a3fa-7e6c-4d61-ba44-81e1b0ae86f4",
+      "comment": "Check Whatsapp icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-whatsapp",
+      "targets": [
+        ["css=.fa-whatsapp", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "2acd1db5-744e-49c7-9a6d-f6217e59b8d6",
+      "comment": "Check Whatsapp title",
+      "command": "assertText",
+      "target": "css=.social:nth-child(1) span",
+      "targets": [],
+      "value": "Whatsapp"
+    }, {
+      "id": "f8d0feb7-b023-44cb-93db-7d6addd2cb67",
+      "comment": "Check LinkedIn network",
+      "command": "assertElementPresent",
+      "target": "css=.social:nth-child(2)",
+      "targets": [
+        ["css=.social:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section/div/span", "xpath:idRelative"],
+        ["xpath=//section/section/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Whatsapp')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9835b5cf-0c2d-4df6-8fdd-dbeed7436dff",
+      "comment": "Check LinkedIn icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-linkedin",
+      "targets": [
+        ["css=.fa-linkedin > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "bcca5cae-b77f-4d68-839f-e3c0306e90f2",
+      "comment": "Check LinkedIn title",
+      "command": "assertText",
+      "target": "css=.social:nth-child(2) span",
+      "targets": [],
+      "value": "Linkedin"
+    }, {
+      "id": "49519d78-0c60-4956-94c9-d927b2e7227d",
+      "comment": "Check Github network",
+      "command": "assertElementPresent",
+      "target": "css=.social:nth-child(3)",
+      "targets": [
+        ["css=.social:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section/div/span", "xpath:idRelative"],
+        ["xpath=//section/section/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Whatsapp')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f9f60f4-f5c1-4a37-ad1e-de003dd84a75",
+      "comment": "Check Github icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-github",
+      "targets": [
+        ["css=.fa-github > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "0354a0e2-71b2-4651-9a95-07a48b47b413",
+      "comment": "Check Github title",
+      "command": "assertText",
+      "target": "css=.social:nth-child(3) span",
+      "targets": [],
+      "value": "Github"
+    }, {
+      "id": "3019f980-8bd8-4ab6-90e4-8c505e22c09f",
+      "comment": "Check Medium network",
+      "command": "assertElementPresent",
+      "target": "css=.social:nth-child(4)",
+      "targets": [
+        ["css=.social:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section/div/span", "xpath:idRelative"],
+        ["xpath=//section/section/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Whatsapp')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf9bff91-9e0f-47ff-829c-608d315cf407",
+      "comment": "Check Medium icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-medium",
+      "targets": [
+        ["css=.fa-medium > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9f777de-c894-486c-be4d-bf3fc4bcac52",
+      "comment": "Check Medium title",
+      "command": "assertText",
+      "target": "css=.social:nth-child(4) span",
+      "targets": [],
+      "value": "Medium"
+    }, {
+      "id": "33075c3f-fe35-44c9-b66c-3e125a28b152",
+      "comment": "Check subtitle \"Descargar CV\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/section[2]/h2",
+      "targets": [
+        ["css=.d-flex > .text-danger", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section[2]/h2", "xpath:idRelative"],
+        ["xpath=//section[2]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Download CV:')]", "xpath:innerText"]
+      ],
+      "value": "Descargar CV:"
+    }, {
+      "id": "3392efee-29a2-4b86-a800-93937322787a",
+      "comment": "Check download cv button",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/section[2]/a/button",
+      "targets": [
+        ["css=.rounded:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section[2]/a/button", "xpath:idRelative"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Download curriculum')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "63254905-9b20-4d9d-a7cc-08c8dfa3e69f",
+      "comment": "Check download cv button icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-file-arrow-down",
+      "targets": [
+        ["css=.fa-file-arrow-down > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "89dfca79-b5e5-4561-b676-f30ea4c21f40",
+      "comment": "Check download cv button title",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/section[2]/a/button/span",
+      "targets": [],
+      "value": "Descargar curriculum"
+    }, {
+      "id": "238f3d5a-4c4a-4a61-8718-aeb4679bde06",
+      "comment": "------------------------------ CHECK FOOTER ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb6dd4bc-4d8d-4e9f-a79a-67b5bbf98589",
+      "comment": "Check footer author",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'Copyright © 2019 Desarrollador Frontend Husdady')]",
+      "targets": [
+        ["css=.default-text", "css:finder"],
+        ["xpath=//div[@id='root']/main/footer/span", "xpath:idRelative"],
+        ["xpath=//footer/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Copyright © 2019 Desarrollador Frontend Husdady')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1407663-c742-47d6-9657-d41a3ab3f5e8",
+      "comment": "------------------------------ END ------------------------------",
       "command": "",
       "target": "",
       "targets": [],
@@ -1103,14 +1732,14 @@
       "id": "eab14799-284b-4b87-a541-a261f76bd3b4",
       "comment": "Check tab Skills name",
       "command": "assertText",
-      "target": "xpath=//div[@id='root']/main/section[2]/div/div/a/span",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li/a/span",
       "targets": [],
       "value": "Skills"
     }, {
       "id": "829d2741-0fd7-4f1a-bfad-ecf84bd05ab6",
       "comment": "Check tab Skills is actived",
       "command": "assertElementPresent",
-      "target": "xpath=//div[@id='root']/main/section[2]/div/div/a[contains(@class, 'active')]",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li/a[contains(@class, 'active')]",
       "targets": [
         ["linkText=Skills", "linkText"],
         ["css=.active", "css:finder"],
@@ -1133,7 +1762,7 @@
       "id": "0a9a4224-d5b6-4dfb-8a53-8f8415f337b2",
       "comment": "Check tab Proyects name",
       "command": "assertText",
-      "target": "xpath=//div[@id='root']/main/section[2]/div/div[2]/a/span",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[2]/a/span",
       "targets": [
         ["css=.nav-item:nth-child(2) span", "css:finder"],
         ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a/span", "xpath:idRelative"],
@@ -1154,7 +1783,7 @@
       "id": "2bd0d90c-bb36-4cdb-862d-1bcafe50115e",
       "comment": "Check tab Gallery name",
       "command": "assertText",
-      "target": "xpath=//div[@id='root']/main/section[2]/div/div[3]/a/span",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[3]/a/span",
       "targets": [
         ["css=.nav-item:nth-child(3) span", "css:finder"],
         ["xpath=//div[@id='root']/main/section[2]/div/div[3]/a/span", "xpath:idRelative"],
@@ -1175,7 +1804,7 @@
       "id": "36bbacaf-cdf7-4420-8682-81e225b6dd73",
       "comment": "Check tab Contact name",
       "command": "assertText",
-      "target": "xpath=//div[@id='root']/main/section[2]/div/div[4]/a/span",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[4]/a/span",
       "targets": [
         ["css=.nav-item:nth-child(4) span", "css:finder"],
         ["xpath=//div[@id='root']/main/section[2]/div/div[4]/a/span", "xpath:idRelative"],
@@ -1192,7 +1821,7 @@
       "value": ""
     }, {
       "id": "0bc1e110-ea06-4d2d-a716-b92c9899b7d3",
-      "comment": "Check skills title",
+      "comment": "Check tab title",
       "command": "assertText",
       "target": "xpath=//div[@id='root']/main/section[2]/section/div/h2",
       "targets": [
@@ -1619,6 +2248,276 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "c753612f-3954-4610-9adc-7f9015ee53ef",
+      "comment": "Scroll to top page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, 0);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ec37a77-c8f5-4c4e-888b-8691f6521103",
+      "comment": "Select Proyects tab",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[2]/a",
+      "targets": [
+        ["linkText=Proyects", "linkText"],
+        ["css=.nav-item:nth-child(2) > .bg-transparent", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proyects')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "87b9e06a-d7dd-4539-90c0-04ecfd453167",
+      "comment": "Check tab Proyects is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[2]/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ed0a5c3-80ec-4ff5-bdac-dd0db234576b",
+      "comment": "Check tab title",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/article/h2",
+      "targets": [
+        ["css=.text-danger:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Projects I have done as a developer')]", "xpath:innerText"]
+      ],
+      "value": "Projects I have done as a developer"
+    }, {
+      "id": "7d39d80f-a17d-402e-a009-f7db4e92ddd4",
+      "comment": "Check subtitle \"Main Proyects\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/article/h4",
+      "targets": [
+        ["css=.my-4:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Main Proyects:')]", "xpath:innerText"]
+      ],
+      "value": "Main Proyects:"
+    }, {
+      "id": "64910f56-6cbe-4912-b148-332cecf48e56",
+      "comment": "Check proyect \"Emprendimiento y Salud\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(1) > .proyect-title",
+      "targets": [
+        ["css=.proyects:nth-child(3) > .proyect:nth-child(1) > .proyect-title > .mb-0", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/section/article/div/h6", "xpath:idRelative"],
+        ["xpath=//h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'Emprendimiento y Salud')]", "xpath:innerText"]
+      ],
+      "value": "Emprendimiento y Salud"
+    }, {
+      "id": "964fe375-7d5e-462d-a209-9234d16a4764",
+      "comment": "Check proyect \"CMS - Emprendimiento y Salud\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(2) > .proyect-title",
+      "targets": [],
+      "value": "CMS - Emprendimiento y Salud"
+    }, {
+      "id": "a090d0ee-a9b1-498a-a3f6-07c434db8b7f",
+      "comment": "Check proyect \"Nutrición y Salud Personal\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(3) > .proyect-title",
+      "targets": [],
+      "value": "Nutrición y Salud Personal"
+    }, {
+      "id": "6023e75a-d47f-4fd5-a811-acb79c66422a",
+      "comment": "Scroll 180 bottom Main proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const mainProyects = proyects[0]; mainProyects.scrollTop = 180;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0d18222-c9aa-4d35-b13f-5de00ce57190",
+      "comment": "Check proyect \"Multiservicios Espay\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(4) > .proyect-title",
+      "targets": [],
+      "value": "Multiservicios Espay"
+    }, {
+      "id": "67e2149e-3dac-4b04-9c5e-aa574ed35373",
+      "comment": "Check proyect \"CMS - Multiservicios Espay\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(5) > .proyect-title",
+      "targets": [],
+      "value": "CMS - Multiservicios Espay"
+    }, {
+      "id": "36f6e8a4-aae6-4576-b167-750703995fa6",
+      "comment": "Check proyect \"Intellitec\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(6) > .proyect-title",
+      "targets": [],
+      "value": "Intellitec"
+    }, {
+      "id": "a3fa9fbd-b5dc-4c67-b707-c114b9e02b64",
+      "comment": "Scroll 360 bottom Main proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const mainProyects = proyects[0]; mainProyects.scrollTop = 180 * 2;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e46a48c-d9e3-45bb-9d8f-0850c998fd19",
+      "comment": "Check proyect \"Movies Awards Ballot\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(7) > .proyect-title",
+      "targets": [],
+      "value": "Movies Awards Ballot"
+    }, {
+      "id": "d6b6336d-fea2-4efb-9bca-31ef13d22762",
+      "comment": "Check proyect \"Pokemon Mistery Dungeon\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(8) > .proyect-title",
+      "targets": [],
+      "value": "Pokemon Mistery Dungeon"
+    }, {
+      "id": "e997f250-fd00-40b2-bfeb-7ca6cdc8f564",
+      "comment": "Check proyect \"Pathpoint\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(9) > .proyect-title",
+      "targets": [],
+      "value": "Pathpoint"
+    }, {
+      "id": "c58619bd-c555-4a6c-939f-161ea8d10015",
+      "comment": "Scroll 540 bottom Main proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const mainProyects = proyects[0]; mainProyects.scrollTop = 180 * 3;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "21e18b57-4162-4419-8563-add31733feb2",
+      "comment": "Check proyect \"Selenium IDE Tests\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(10) > .proyect-title",
+      "targets": [],
+      "value": "Selenium IDE Tests"
+    }, {
+      "id": "7e8cd309-94d3-4472-8e4d-8d2153539053",
+      "comment": "Check proyect \"Age of Empires II\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(11) > .proyect-title",
+      "targets": [],
+      "value": "Age of Empires II"
+    }, {
+      "id": "5f612d15-46b7-4c9d-9b1b-a27a5582b519",
+      "comment": "Check proyect \"API Whatsapp\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(12) > .proyect-title",
+      "targets": [],
+      "value": "API Whatsapp"
+    }, {
+      "id": "96d20478-ab3c-42c5-b152-39555de006e4",
+      "comment": "Scroll to bottom Main proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const mainProyects = proyects[1]; mainProyects.scrollTop = mainProyects.scrollHeight;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7bcf9f34-5486-41d8-9597-3de7ff473855",
+      "comment": "Check proyect \"Services TODO List\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(13) > .proyect-title",
+      "targets": [],
+      "value": "Services TODO List"
+    }, {
+      "id": "ac4a08a6-cddc-4be4-ac13-b1e926dc19dc",
+      "comment": "Scroll to bottom page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, document.body.scrollHeight);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0fa02a54-a079-4019-931d-65eb6eb74703",
+      "comment": "Check subtitle \"Personal Proyects\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/article/h4[2]",
+      "targets": [
+        ["css=.my-4:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/h4[2]", "xpath:idRelative"],
+        ["xpath=//h4[2]", "xpath:position"],
+        ["xpath=//h4[contains(.,'Personal Proyects:')]", "xpath:innerText"]
+      ],
+      "value": "Personal Proyects:"
+    }, {
+      "id": "9fd7a4eb-f115-4bab-8f7e-69719ba9518d",
+      "comment": "Check proyect \"Universal Pokedex\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(1) > .proyect-title",
+      "targets": [
+        ["css=.proyects:nth-child(5) > .proyect:nth-child(1) .mb-0", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/section[2]/div/section[2]/h6", "xpath:idRelative"],
+        ["xpath=//section[2]/div/section[2]/h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'Universal Pokedex')]", "xpath:innerText"]
+      ],
+      "value": "Universal Pokedex"
+    }, {
+      "id": "99c24040-78a4-432f-bf91-e6956f2262d8",
+      "comment": "Check proyect \"Calculator\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(2) > .proyect-title",
+      "targets": [],
+      "value": "Calculator"
+    }, {
+      "id": "11fdbc80-8e28-4517-a392-a470c47884dd",
+      "comment": "Check proyect \"How much do you know about the universe?\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(3) > .proyect-title",
+      "targets": [],
+      "value": "How much do you know about the universe?"
+    }, {
+      "id": "4a3c89f9-bd2a-4d23-a50f-cd37c77eab07",
+      "comment": "Scroll 180 bottom Personal proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const personalProyects = proyects[1]; personalProyects.scrollTop = 180;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7614d8a0-f777-4c22-85e6-d2abe75c18cf",
+      "comment": "Check proyect \"Friendship maker\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(4) > .proyect-title",
+      "targets": [],
+      "value": "Friendship maker"
+    }, {
+      "id": "61506a8e-2648-429c-961d-c74ad889f116",
+      "comment": "Check proyect \"Shopping simulator\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(5) > .proyect-title",
+      "targets": [],
+      "value": "Shopping simulator"
+    }, {
+      "id": "22a5c9ae-c227-464b-a3ba-83b0d0847b1d",
+      "comment": "Check proyect \"How to validate a form?\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(6) > .proyect-title",
+      "targets": [],
+      "value": "How to validate a form?"
+    }, {
+      "id": "b57b17fb-999e-4087-9e80-841cee57855b",
+      "comment": "Scroll to bottom Personal proyects container",
+      "command": "executeScript",
+      "target": "const proyects = document.getElementsByClassName('proyects'); const personalProyects = proyects[1]; personalProyects.scrollTop = personalProyects.scrollHeight;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "236d9cbb-b798-4b23-9caf-671f8aaedc7e",
+      "comment": "Check proyect \"Medyfie\"",
+      "command": "assertText",
+      "target": "css=.proyects:nth-child(5) > .proyect:nth-child(7) > .proyect-title",
+      "targets": [],
+      "value": "Medyfie"
+    }, {
       "id": "9b29e946-2ab1-49bf-993c-8fbcca79de25",
       "comment": "------------------------------ CHECK GALLERY TAB ------------------------------",
       "command": "",
@@ -1626,8 +2525,1926 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "1a6071cf-bc99-4237-a19a-eb04d16de36f",
+      "comment": "Scroll to top page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, 0);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5fcd2748-a21b-4b4f-96e1-9a2f5fa307f1",
+      "comment": "Select Gallery tab",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[3]/a",
+      "targets": [
+        ["linkText=Proyects", "linkText"],
+        ["css=.nav-item:nth-child(2) > .bg-transparent", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proyects')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61f8c40e-0c80-4373-9d0d-927239b017e6",
+      "comment": "Check tab Gallery is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[3]/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "86a550fd-a2fe-4bcd-8a4a-c9efb637fff8",
+      "comment": "Check tab title",
+      "command": "assertText",
+      "target": "css=.text-danger:nth-child(1)",
+      "targets": [
+        ["css=.text-danger:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Projects I have done as a developer')]", "xpath:innerText"]
+      ],
+      "value": "Photo Gallery about me"
+    }, {
       "id": "674e8f4d-707b-4f2e-87ba-eae1ad7e8940",
       "comment": "------------------------------ CHECK CONTACT TAB ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "54f2b06a-9be9-4e9b-a4cf-4b22afc68440",
+      "comment": "Select Contact tab",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[4]/a",
+      "targets": [
+        ["linkText=Proyects", "linkText"],
+        ["css=.nav-item:nth-child(2) > .bg-transparent", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proyects')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "12338b0e-f3d8-4396-98b0-8ee18a96379f",
+      "comment": "Check tab Contact is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[4]/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b32f006-3d67-4869-908a-0d4c54cdfc0f",
+      "comment": "Check tab title",
+      "command": "assertText",
+      "target": "css=.text-danger:nth-child(1)",
+      "targets": [
+        ["css=.text-danger:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Projects I have done as a developer')]", "xpath:innerText"]
+      ],
+      "value": "Do you want to contact me?"
+    }, {
+      "id": "ee2c8cfe-42b2-46d9-ba9c-acfa06fdfcea",
+      "comment": "Check fullname is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9d2eef2-2c9c-4f09-a56d-db302c8eed69",
+      "comment": "Check email is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(2)",
+      "targets": [
+        ["css=.form-control:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@value=''])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d89f803d-796a-4c59-8a80-ad41c31a9614",
+      "comment": "Check optional message is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4384e692-10b6-4297-84df-3a00a78ffbc7",
+      "comment": "Check submit button",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/button",
+      "targets": [
+        ["css=.mt-4", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Send message')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ced2bf00-8de6-4b7f-be3e-43fd8bc8a198",
+      "comment": "Check submit button icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-paper-plane",
+      "targets": [
+        ["css=.fa-paper-plane > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "21cb8e06-6fd4-4147-bb69-4a6329d56c0e",
+      "comment": "Check submit button title",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/button/span",
+      "targets": [
+        ["css=.mt-4 > .ms-2", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Send message')]", "xpath:innerText"]
+      ],
+      "value": "Send message"
+    }, {
+      "id": "1a4a1c4d-9198-411b-bb0f-149cea97523a",
+      "comment": "Scroll to bottom page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, document.body.scrollHeight);",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93a1d225-2a8b-4b06-b81d-81c75b3f6381",
+      "comment": "Check subtitle \"My social networks\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/section/h2",
+      "targets": [
+        ["css=.mt-2 > .text-danger", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section/h2", "xpath:idRelative"],
+        ["xpath=//section/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'My social networks::')]", "xpath:innerText"]
+      ],
+      "value": "My social networks:"
+    }, {
+      "id": "0f12b081-010e-4f12-b788-ec29daa7a51a",
+      "comment": "Check Whatsapp network",
+      "command": "assertElementPresent",
+      "target": "css=.social:nth-child(1)",
+      "targets": [
+        ["css=.social:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section/div/span", "xpath:idRelative"],
+        ["xpath=//section/section/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Whatsapp')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "792e77e5-1741-4b1f-8926-c37e50aa75a7",
+      "comment": "Check Whatsapp icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-whatsapp",
+      "targets": [
+        ["css=.fa-whatsapp", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "81c17245-7196-4bc5-ab08-533b68bc0bff",
+      "comment": "Check Whatsapp title",
+      "command": "assertText",
+      "target": "css=.social:nth-child(1) span",
+      "targets": [],
+      "value": "Whatsapp"
+    }, {
+      "id": "bfdd2643-2fd9-4ce4-98e0-3e798fa49340",
+      "comment": "Check LinkedIn network",
+      "command": "assertElementPresent",
+      "target": "css=.social:nth-child(2)",
+      "targets": [
+        ["css=.social:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section/div/span", "xpath:idRelative"],
+        ["xpath=//section/section/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Whatsapp')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbcb1f85-3e15-45e2-a14c-30723e207d68",
+      "comment": "Check LinkedIn icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-linkedin",
+      "targets": [
+        ["css=.fa-linkedin > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "14658e43-ad5c-41f5-aea5-6a966fdffcab",
+      "comment": "Check LinkedIn title",
+      "command": "assertText",
+      "target": "css=.social:nth-child(2) span",
+      "targets": [],
+      "value": "Linkedin"
+    }, {
+      "id": "2d3092ae-b9f8-4560-96bc-530a6de41753",
+      "comment": "Check Github network",
+      "command": "assertElementPresent",
+      "target": "css=.social:nth-child(3)",
+      "targets": [
+        ["css=.social:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section/div/span", "xpath:idRelative"],
+        ["xpath=//section/section/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Whatsapp')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cfdcc501-8934-46d1-88f2-554435ba268f",
+      "comment": "Check Github icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-github",
+      "targets": [
+        ["css=.fa-github > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "bfab1d24-de6b-4c0e-abf6-dca06af2de95",
+      "comment": "Check Github title",
+      "command": "assertText",
+      "target": "css=.social:nth-child(3) span",
+      "targets": [],
+      "value": "Github"
+    }, {
+      "id": "77d58dec-3cba-40dd-a054-4d1eb742d6d1",
+      "comment": "Check Medium network",
+      "command": "assertElementPresent",
+      "target": "css=.social:nth-child(4)",
+      "targets": [
+        ["css=.social:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section/div/span", "xpath:idRelative"],
+        ["xpath=//section/section/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Whatsapp')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "310ef601-4b2d-4ae4-9c9d-dc2cac6fb358",
+      "comment": "Check Medium icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-medium",
+      "targets": [
+        ["css=.fa-medium > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "06feb47d-22b7-4db4-8273-8a47de5cdf3d",
+      "comment": "Check Medium title",
+      "command": "assertText",
+      "target": "css=.social:nth-child(4) span",
+      "targets": [],
+      "value": "Medium"
+    }, {
+      "id": "4acdd6b5-7c4d-4d12-b378-c030485a22ae",
+      "comment": "Check subtitle \"Download CV:\"",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/section[2]/h2",
+      "targets": [
+        ["css=.d-flex > .text-danger", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section[2]/h2", "xpath:idRelative"],
+        ["xpath=//section[2]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Download CV:')]", "xpath:innerText"]
+      ],
+      "value": "Download CV:"
+    }, {
+      "id": "55c247fd-a538-4bdd-aa75-6ac9ec47f776",
+      "comment": "Check download cv button",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/section[2]/a/button",
+      "targets": [
+        ["css=.rounded:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section[2]/a/button", "xpath:idRelative"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Download curriculum')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a4a5b15-a4c8-47ac-91a2-90e8e7af1f32",
+      "comment": "Check download cv button icon",
+      "command": "assertElementPresent",
+      "target": "css=.fa-file-arrow-down",
+      "targets": [
+        ["css=.fa-file-arrow-down > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9ba0dc5-2c18-496d-b45e-fcd910d4e0ad",
+      "comment": "Check download cv button title",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/section[2]/a/button/span",
+      "targets": [],
+      "value": "Download curriculum"
+    }, {
+      "id": "7163d4a2-3b43-49fc-9917-87d5af20282e",
+      "comment": "------------------------------ CHECK FOOTER ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46d3ca70-0eb7-481d-ad74-8aa74104a5e8",
+      "comment": "Check footer author",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'Copyright © 2019 Frontend Developer Husdady')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "797b49c7-231f-49e1-803e-551b5e17c94a",
+      "comment": "------------------------------ END ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e965a9c5-f61d-4c5b-82b9-14026c3c929d",
+    "name": "Portfolio Open Proyect",
+    "commands": [{
+      "id": "c475ad20-db8e-4679-9611-1e6685192fe6",
+      "comment": "Open page",
+      "command": "open",
+      "target": "https://husdady.netlify.app",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b5f73651-54e7-48ab-86c6-67b4143b716e",
+      "comment": "Define window size",
+      "command": "setWindowSize",
+      "target": "1366x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7961e33f-be70-4dee-bb2c-d4a17f0917f1",
+      "comment": "------------------------------ OPEN PROYECT ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0010b690-d458-4d48-9d9b-6de6ecb55396",
+      "comment": "Select Proyects tab",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[2]/a",
+      "targets": [
+        ["linkText=Proyects", "linkText"],
+        ["css=.nav-item:nth-child(2) > .bg-transparent", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proyects')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "12e8e812-2f41-4c23-9a03-cdf5d135c461",
+      "comment": "Check tab Proyects is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[2]/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2dac31e6-a586-4637-8a3b-9c06165aa844",
+      "comment": "Define proyect id",
+      "command": "store",
+      "target": "0",
+      "targets": [],
+      "value": "proyectId"
+    }, {
+      "id": "80b42edb-05b4-4d6b-b282-dad124caafae",
+      "comment": "Define proyect url",
+      "command": "store",
+      "target": "https://www.emprendimientoysalud.com/",
+      "targets": [],
+      "value": "proyectUrl"
+    }, {
+      "id": "b2299b38-dba5-4c58-bc0d-abf2686b5cc7",
+      "comment": "Define root url",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86161c3f-0cec-4d0a-ba2c-12f0c9347057",
+      "comment": "Open proyect url",
+      "command": "click",
+      "target": "css=.proyects:nth-child(3) > .proyect:nth-child(1) .border-0",
+      "targets": [
+        ["css=.proyects:nth-child(3) > .proyect:nth-child(1) .border-0", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/article/section/article/figure/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ver proyecto')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "portfolio_proyect_url",
+      "windowTimeout": 2000
+    }, {
+      "id": "8580d0be-30cc-4b51-ae26-e8c6b4c9e51d",
+      "comment": "Wait for load page",
+      "command": "pause",
+      "target": "10000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "64f97eb0-dc22-46ea-9dcf-d737a65d5e8a",
+      "comment": "Change tab for proyect url",
+      "command": "selectWindow",
+      "target": "handle=${portfolio_proyect_url}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26c8a248-82cb-4919-bd85-37b37d9d1f3e",
+      "comment": "Get proyect url from new window",
+      "command": "executeScript",
+      "target": "return document.URL",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "cc43ff4c-84ed-43af-a947-dd58c1ce370e",
+      "comment": "Check if url of new tab is equal to proyect url",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "${proyectUrl}"
+    }, {
+      "id": "ff062e70-3108-482f-9dce-eaa2853e8eb5",
+      "comment": "Close new tab",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "496aef1d-ad72-4224-82de-cbff258e7884",
+      "comment": "Change tab for portfolio url",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f2858e2-7eaa-437d-b684-94fbda0a28d4",
+      "comment": "------------------------------ END ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0f89c991-668d-485f-b5f5-cdc536214d3c",
+    "name": "Portfolio Show Gallery",
+    "commands": [{
+      "id": "57fb8952-77e1-4b09-953f-e49d7e2141d0",
+      "comment": "Open page",
+      "command": "open",
+      "target": "https://husdady.netlify.app",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e1685937-cdd5-4840-98dc-59105df89a08",
+      "comment": "Define window size",
+      "command": "setWindowSize",
+      "target": "1366x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a562def2-c168-432b-bebc-93c1fbf559c1",
+      "comment": "------------------------------ SHOW GALLERY ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "907a7403-f9b5-4227-bd12-8b788f1c5a7f",
+      "comment": "Select Gallery tab",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[3]/a",
+      "targets": [
+        ["linkText=Proyects", "linkText"],
+        ["css=.nav-item:nth-child(2) > .bg-transparent", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proyects')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ea5c45f-d722-4ce6-ba68-4fed2cac3986",
+      "comment": "Check tab Gallery is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[3]/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "38b2be51-50f5-46c9-8f9c-84e918008054",
+      "comment": "Click on photo",
+      "command": "click",
+      "target": "xpath=//div[@id='ReactGridGallery']/div/div[4]/img",
+      "targets": [
+        ["css=.ReactGridGallery_tile:nth-child(2) img", "css:finder"],
+        ["xpath=//img[contains(@src,'https://i.imgur.com/1pOcSnt.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='ReactGridGallery']/div/div[4]/img", "xpath:idRelative"],
+        ["xpath=//div[4]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7848046f-dc47-424f-b4db-68a4155cb33a",
+      "comment": "Check if modal is showing",
+      "command": "assertElementPresent",
+      "target": "id=lightboxBackdrop",
+      "targets": [
+        ["id=lightboxBackdrop", "id"],
+        ["css=#lightboxBackdrop", "css:finder"],
+        ["xpath=//div[@id='lightboxBackdrop']", "xpath:attributes"],
+        ["xpath=//div[5]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db6ee645-fd3f-4058-b290-c4234b6072f4",
+      "comment": "Check if close icon is showing",
+      "command": "assertElementPresent",
+      "target": "css=.close_1x3s325",
+      "targets": [
+        ["css=.close_1x3s325 path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "0706df5e-ab1c-4895-a7f3-381d91864bd1",
+      "comment": "Check if photo is showing",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='lightboxBackdrop']/div/div/figure/img",
+      "targets": [
+        ["css=.image_1swebtw-o_O-imageLoaded_zgbg08", "css:finder"],
+        ["xpath=(//img[contains(@src,'https://i.imgur.com/1pOcSnt.jpg')])[2]", "xpath:img"],
+        ["xpath=//div[@id='lightboxBackdrop']/div/div/figure/img", "xpath:idRelative"],
+        ["xpath=//figure/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "093dbd0d-cbcf-4664-9c9a-75a583a05b34",
+      "comment": "Check if label is showing",
+      "command": "assertText",
+      "target": "xpath=//div[@id='lightboxBackdrop']/div/div/div[3]/div",
+      "targets": [
+        ["css=.footerCount_lkhc9u", "css:finder"],
+        ["xpath=//div[@id='lightboxBackdrop']/div/div/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div/div/div[3]/div", "xpath:position"]
+      ],
+      "value": "1 of 16"
+    }, {
+      "id": "95456146-eccb-46c4-beee-1cc408f2e287",
+      "comment": "Check right arrow",
+      "command": "assertElementPresent",
+      "target": "css=.arrow_b9bbag-o_O-arrow__direction__right_174p6a9-o_O-arrow__size__medium_9f7hgo svg",
+      "targets": [
+        ["css=.arrow_b9bbag-o_O-arrow__direction__right_174p6a9-o_O-arrow__size__medium_9f7hgo svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "89048691-4887-4123-aca4-2ed99002c03b",
+      "comment": "Close modal",
+      "command": "click",
+      "target": "css=.close_1x3s325",
+      "targets": [
+        ["css=.close_1x3s325 svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "e11c530b-eace-426b-8f2d-bb65f2193203",
+      "comment": "Check if modal has been hidden",
+      "command": "assertElementNotPresent",
+      "target": "id=lightboxBackdrop",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dbd67259-38b5-4669-bd22-de2b83d36312",
+      "comment": "Click on photo",
+      "command": "click",
+      "target": "xpath=//div[@id='ReactGridGallery']/div/div[4]/img",
+      "targets": [
+        ["css=.ReactGridGallery_tile:nth-child(2) img", "css:finder"],
+        ["xpath=//img[contains(@src,'https://i.imgur.com/1pOcSnt.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='ReactGridGallery']/div/div[4]/img", "xpath:idRelative"],
+        ["xpath=//div[4]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fa861f5-c611-4b2b-ad5f-708cb3f7a52a",
+      "comment": "Show next photo",
+      "command": "click",
+      "target": "css=.arrow_b9bbag-o_O-arrow__direction__right_174p6a9-o_O-arrow__size__medium_9f7hgo svg",
+      "targets": [
+        ["css=.arrow_b9bbag-o_O-arrow__direction__right_174p6a9-o_O-arrow__size__medium_9f7hgo svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "3229ec4f-4f29-4833-8e00-9630bd407daf",
+      "comment": "Check left arrow",
+      "command": "assertElementPresent",
+      "target": "css=.arrow_b9bbag-o_O-arrow__direction__left_shhpn5-o_O-arrow__size__medium_9f7hgo svg",
+      "targets": [
+        ["css=.arrow_b9bbag-o_O-arrow__direction__left_shhpn5-o_O-arrow__size__medium_9f7hgo svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "42c8210d-4341-400e-8a98-ae8165fce9d5",
+      "comment": "Check if label increment",
+      "command": "assertText",
+      "target": "xpath=//div[@id='lightboxBackdrop']/div/div/div[3]/div",
+      "targets": [
+        ["css=.footerCount_lkhc9u", "css:finder"],
+        ["xpath=//div[@id='lightboxBackdrop']/div/div/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div/div/div[3]/div", "xpath:position"]
+      ],
+      "value": "2 of 16"
+    }, {
+      "id": "90e8134f-9b01-4a87-8d88-f3adec5aa2ca",
+      "comment": "Show prev photo",
+      "command": "click",
+      "target": "css=.arrow_b9bbag-o_O-arrow__direction__left_shhpn5-o_O-arrow__size__medium_9f7hgo svg",
+      "targets": [
+        ["css=.arrow_b9bbag-o_O-arrow__direction__left_shhpn5-o_O-arrow__size__medium_9f7hgo svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "c94c5c25-fbb1-4ddb-98d9-4f4d5798d025",
+      "comment": "Check if label decrement",
+      "command": "assertText",
+      "target": "xpath=//div[@id='lightboxBackdrop']/div/div/div[3]/div",
+      "targets": [
+        ["css=.footerCount_lkhc9u", "css:finder"],
+        ["xpath=//div[@id='lightboxBackdrop']/div/div/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div/div/div[3]/div", "xpath:position"]
+      ],
+      "value": "1 of 16"
+    }, {
+      "id": "e8a912b6-d685-44a3-b71f-5ffab3fd988e",
+      "comment": "Define count",
+      "command": "store",
+      "target": "1",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "009b5fa6-98f1-4ea2-9285-bc6a55f06532",
+      "comment": "Get total photos",
+      "command": "storeXpathCount",
+      "target": "xpath=//div[@id='ReactGridGallery']//div[@class='ReactGridGallery_tile']",
+      "targets": [],
+      "value": "totalPhotos"
+    }, {
+      "id": "6da0fd6e-56ce-4238-9f99-66f8378babe0",
+      "comment": "Iterate each photo",
+      "command": "times",
+      "target": "${totalPhotos}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c3cc4dac-6f21-4a60-a8b4-f3ef3ed07599",
+      "comment": "Check if label is showing",
+      "command": "assertText",
+      "target": "xpath=//div[@id='lightboxBackdrop']/div/div/div[3]/div",
+      "targets": [
+        ["css=.footerCount_lkhc9u", "css:finder"],
+        ["xpath=//div[@id='lightboxBackdrop']/div/div/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div/div/div[3]/div", "xpath:position"]
+      ],
+      "value": "${count} of 16"
+    }, {
+      "id": "e2a8d04f-bd1b-4262-86fe-bc93f7e4cb6a",
+      "comment": "",
+      "command": "if",
+      "target": "${count} < ${totalPhotos}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6cb677a1-5886-436a-ae5e-985cdff7eae8",
+      "comment": "Increment script",
+      "command": "executeScript",
+      "target": "return Number(${count}) + 1",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "b1549a1c-8933-47b3-9f00-4aa56f9749d7",
+      "comment": "Show next photo",
+      "command": "click",
+      "target": "css=.arrow_b9bbag-o_O-arrow__direction__right_174p6a9-o_O-arrow__size__medium_9f7hgo svg",
+      "targets": [
+        ["css=.arrow_b9bbag-o_O-arrow__direction__right_174p6a9-o_O-arrow__size__medium_9f7hgo svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "76877f4b-3fac-44ca-ac45-9853a82df96a",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c204a06-2978-4df9-8b10-8abbacc9fae0",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "27c12c2a-3970-4b7d-bdb9-94752519b4bd",
+      "comment": "Check if count is equal to total photos",
+      "command": "assert",
+      "target": "count",
+      "targets": [],
+      "value": "${totalPhotos}"
+    }, {
+      "id": "0f66906c-e980-49d3-86b0-d6be60684cee",
+      "comment": "Close modal",
+      "command": "click",
+      "target": "css=.close_1x3s325",
+      "targets": [
+        ["css=.close_1x3s325 svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "2cf90727-67b9-42e3-abc9-50e9da78e4d4",
+      "comment": "Check if modal has been hidden",
+      "command": "assertElementNotPresent",
+      "target": "id=lightboxBackdrop",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "c366569a-076b-45ee-aeb2-8a989314329b",
+    "name": "Portfolio Contact Form in English Language",
+    "commands": [{
+      "id": "ce06db42-3585-48fe-8165-ee78b0502ce4",
+      "comment": "Open page",
+      "command": "open",
+      "target": "https://husdady.netlify.app",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "57921f1a-9f3a-4b3c-bb16-0ec4e94896c2",
+      "comment": "Define window size",
+      "command": "setWindowSize",
+      "target": "1366x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ba23912-5525-4bb9-a76e-8d775c12347b",
+      "comment": "------------------------------ LANGUAGE ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15ea9630-39eb-4ac9-a580-ff7691e71228",
+      "comment": "Get language",
+      "command": "executeScript",
+      "target": "const lang = window.localStorage.getItem(\"lang\"); return JSON.parse(lang);",
+      "targets": [],
+      "value": "lang"
+    }, {
+      "id": "32f0842d-3c1b-4403-a618-811912e3902d",
+      "comment": "If current language is not English",
+      "command": "if",
+      "target": "${lang} !== \"EN\"",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "993a247f-3b1b-43c8-97f4-6a96466ccf33",
+      "comment": "Active Enlgish language",
+      "command": "click",
+      "target": "xpath=//section[@id='languages']/ul/li[2]/img",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bda87047-51c5-45f7-8e9e-0838cb60b1a6",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56010bb8-3891-4bbc-aabb-6dbcd809d50c",
+      "comment": "USA flag is active",
+      "command": "assertElementPresent",
+      "target": "xpath=//section[@id='languages']/ul/li[2][contains(@class, 'opacity-100')]",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a04fef74-42e9-43b9-af67-34eba966080f",
+      "comment": "Spanish flag is desactive",
+      "command": "assertElementPresent",
+      "target": "xpath=//section[@id='languages']/ul/li[contains(@class, 'opacity-25')]",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b798e834-bfab-4696-95b7-40a0a465bb89",
+      "comment": "------------------------------ CONTACT FORM IS EMPTY ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b5296c8a-b732-41f7-bc88-18fe20ccdbac",
+      "comment": "Select Contact tab",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[4]/a",
+      "targets": [
+        ["linkText=Proyects", "linkText"],
+        ["css=.nav-item:nth-child(2) > .bg-transparent", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proyects')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fda41a9c-0190-4a23-a8b0-28cc49614ff9",
+      "comment": "Check tab Contact is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[4]/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "632bbb27-e4a5-49d3-8a95-e902eb6701d6",
+      "comment": "Check 'fullname' field is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eae92b64-276a-430e-9773-54bf656f19de",
+      "comment": "Check 'email' field is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(2)",
+      "targets": [
+        ["css=.form-control:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@value=''])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38c36ca5-f5f1-476d-81bb-025c828d3dca",
+      "comment": "Check 'message' field is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf22ac87-45fd-4d68-b90b-f40d05f27140",
+      "comment": "------------------------------ CONTACT FORM SUBMIT ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4812bd87-5873-4b9d-8a28-11935c7fe575",
+      "comment": "Scroll 100 bottom page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, 100)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1406cf75-cbf9-4a09-a9f6-b972367fa598",
+      "comment": "Check submit button",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'Download curriculum')]",
+      "targets": [
+        ["css=.px-4 > .ms-2", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section[2]/a/button/span", "xpath:idRelative"],
+        ["xpath=//a/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Download curriculum')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbd9d977-cede-46f8-87d0-79eb95e44e2d",
+      "comment": "Submit form",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/button",
+      "targets": [
+        ["css=.mt-4", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Send message')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d8478c5-a75d-4401-9d43-b46842df0513",
+      "comment": "Check 'fullname' field error",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div",
+      "targets": [
+        ["css=.ps-2:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b54bc8ef-98d7-4e22-b62d-ef02765cf5a1",
+      "comment": "Check 'fullname' field error icon",
+      "command": "assertElementPresent",
+      "target": "css=.ps-2:nth-child(2) path",
+      "targets": [
+        ["css=.ps-2:nth-child(2) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4c0d73f-6d13-4e7e-a14f-db5cfa89e1b2",
+      "comment": "Check 'fullname' field error title when is empty",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [],
+      "value": "Please enter your fullname"
+    }, {
+      "id": "21844ed4-bc6c-40a0-9564-08e11a47e7fb",
+      "comment": "Check 'email' field error",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div[2]",
+      "targets": [
+        ["css=.ps-2:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b6f5262-31cd-45b8-8fa3-b85e658cc59f",
+      "comment": "Check 'email' field error icon",
+      "command": "assertElementPresent",
+      "target": "css=.ps-2:nth-child(4) path",
+      "targets": [
+        ["css=.ps-2:nth-child(4) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "aca575b6-70bb-4bd1-a4ae-017ee3c49f90",
+      "comment": "Check 'email' field error title when is empty",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div[2]/small",
+      "targets": [
+        ["css=.ps-2:nth-child(4) > small", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div[2]/small", "xpath:idRelative"],
+        ["xpath=//div[2]/small", "xpath:position"],
+        ["xpath=//small[contains(.,'Please enter your email')]", "xpath:innerText"]
+      ],
+      "value": "Please enter your email"
+    }, {
+      "id": "3d8f2c52-f458-44fb-b149-2e41ddd6028e",
+      "comment": "Check 'message' field error",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div[3]",
+      "targets": [
+        ["css=.ps-2:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div[3]", "xpath:idRelative"],
+        ["xpath=//form/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0793e4f-0fd8-498d-bb53-3fa316f57e06",
+      "comment": "Check 'message' field error icon",
+      "command": "assertElementPresent",
+      "target": "css=.ps-2:nth-child(6) path",
+      "targets": [
+        ["css=.ps-2:nth-child(6) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "95cd2bb8-bf43-4b70-ad34-2f06b3822427",
+      "comment": "Check 'message' field error title when is empty",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div[3]/small",
+      "targets": [
+        ["css=.ps-2:nth-child(6) > small", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div[3]/small", "xpath:idRelative"],
+        ["xpath=//div[3]/small", "xpath:position"],
+        ["xpath=//small[contains(.,'Please enter a optional message')]", "xpath:innerText"]
+      ],
+      "value": "Please enter a optional message"
+    }, {
+      "id": "7739b493-ae15-4deb-9307-4d6af18d517e",
+      "comment": "------------------------------ UPDATE 'fullname' FIELD ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d58db65b-1644-46bd-8b58-7f144a8cbe2c",
+      "comment": "Update 'fullname' field with 2 characters",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "HU"
+    }, {
+      "id": "b2144991-2529-46b2-a749-6e5f14e15249",
+      "comment": "Check 'fullname' field error min length",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [],
+      "value": "There are no names that have less than 3 characters"
+    }, {
+      "id": "b6cb5bb6-9902-49c4-84ae-d17b520d9829",
+      "comment": "Update 'fullname' field with more 32 characters",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+    }, {
+      "id": "ac5b1647-2791-48d1-b371-773701291355",
+      "comment": "Check 'fullname' field error max length",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [],
+      "value": "Enter a name that has at most 32 characters"
+    }, {
+      "id": "5ef35ea5-a3b4-4c78-a3f9-a71d2887d445",
+      "comment": "Update 'fullname' field",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Husdady"
+    }, {
+      "id": "83edbefb-26fc-4910-8cf2-68195c029c8a",
+      "comment": "Check 'fullname' field error has been hidden",
+      "command": "assertElementNotPresent",
+      "target": "css=.ps-2:nth-child(2)",
+      "targets": [
+        ["css=.ps-2:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "05e0351e-ce30-484a-a8ac-934260908294",
+      "comment": "------------------------------ UPDATE 'email' FIELD ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ccd1c51-aa13-4cc2-bc64-558648cacc48",
+      "comment": "Update 'email' field with wrong email",
+      "command": "type",
+      "target": "css=.form-control:nth-child(2)",
+      "targets": [
+        ["css=.form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "husdadymena"
+    }, {
+      "id": "199fe2b3-7ba9-414f-9ff2-433cc3bb9fcc",
+      "comment": "Check 'email' field error wrong email",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [
+        ["css=.ps-2:nth-child(3) > small", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div/small", "xpath:idRelative"],
+        ["xpath=//small", "xpath:position"],
+        ["xpath=//small[contains(.,'Please enter a valid email')]", "xpath:innerText"]
+      ],
+      "value": "Please enter a valid email"
+    }, {
+      "id": "9298a8e2-f08d-4f5c-8600-c14373fb7fb3",
+      "comment": "Update 'email' field",
+      "command": "type",
+      "target": "css=.form-control:nth-child(2)",
+      "targets": [
+        ["css=.form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "husdadymena@gmail.com"
+    }, {
+      "id": "40c3dd0f-89ff-42a9-b2c8-6b8b13e67f43",
+      "comment": "Check 'email' field error has been hidden",
+      "command": "assertElementNotPresent",
+      "target": "css=.ps-2:nth-child(3)",
+      "targets": [
+        ["css=.ps-2:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7e51d0a-54ea-4003-a49e-14566516438c",
+      "comment": "------------------------------ UPDATE 'message' FIELD ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d974e074-7511-4f4b-86c7-148d5761258d",
+      "comment": "Update 'message' field with short message",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "optional message"
+    }, {
+      "id": "996e847c-4824-45e8-a628-b73baac2cc7e",
+      "comment": "Check 'message' field error min length",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [
+        ["css=small", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div/small", "xpath:idRelative"],
+        ["xpath=//small", "xpath:position"],
+        ["xpath=//small[contains(.,'The optional message must have 100 characters at the least')]", "xpath:innerText"]
+      ],
+      "value": "The optional message must have 100 characters at the least"
+    }, {
+      "id": "84d35d9e-5105-416e-b079-2834e0e0fb0a",
+      "comment": "Update 'message' field with largest message",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    }, {
+      "id": "9a0b84e5-2798-4479-b0b3-b5c389c60efb",
+      "comment": "Check 'message' field error max length",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [
+        ["css=small", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div/small", "xpath:idRelative"],
+        ["xpath=//small", "xpath:position"],
+        ["xpath=//small[contains(.,'The optional message must have 100 characters at the least')]", "xpath:innerText"]
+      ],
+      "value": "The optional message must have 500 characters at the greatest"
+    }, {
+      "id": "fae37d4c-f128-4077-b19c-927ee2faeac1",
+      "comment": "Update 'message' field",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    }, {
+      "id": "08150aec-2839-449d-955a-7f485af71f3a",
+      "comment": "Check 'message' field error has been hidden",
+      "command": "assertElementNotPresent",
+      "target": "css=.ps-2",
+      "targets": [
+        ["css=.ps-2", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09c3c2fa-6872-4c77-8dc0-a78da9f7b4b1",
+      "comment": "------------------------------ SUBMIT FORM ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89f3a49e-4da3-424c-a30b-ea4bbafefb8e",
+      "comment": "Submit form",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/button",
+      "targets": [
+        ["css=.mt-4", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Send message')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b16f8b80-99e7-4a5b-9f8a-2ec62ba9763b",
+      "comment": "Check if loading is showing inside the button",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/button/span[contains(@class, 'spinner-border')]",
+      "targets": [
+        ["css=.ms-auto", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Send message')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b967062-12c6-4e29-b842-ae98ffea8dc9",
+      "comment": "Check if Alert is showing",
+      "command": "waitForElementVisible",
+      "target": "css=.fade > div",
+      "targets": [
+        ["css=.fade > div", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "0ef83db5-1d75-41ba-9922-6be0b0cec80c",
+      "comment": "Check Alert title",
+      "command": "verifyText",
+      "target": "css=.title-custom-alert",
+      "targets": [
+        ["css=.title-custom-alert", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Your message was successfully sent to my personal email')]", "xpath:innerText"]
+      ],
+      "value": "Your message was successfully sent to my personal email"
+    }, {
+      "id": "0c8b821a-85e7-4460-9e74-4879298eac50",
+      "comment": "Check Alert success icon",
+      "command": "verifyElementPresent",
+      "target": "css=.fa-circle-check",
+      "targets": [
+        ["css=.fa-circle-check", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "5010898d-b588-48c5-8974-387780249b91",
+      "comment": "Check Alert close icon",
+      "command": "verifyElementPresent",
+      "target": "css=.fa-circle-xmark",
+      "targets": [
+        ["css=.fa-circle-xmark > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ef0986e-10d1-491c-9c62-a2f4bd2ef3fe",
+      "comment": "Close Alert",
+      "command": "click",
+      "target": "css=.fa-circle-xmark",
+      "targets": [
+        ["css=.fa-circle-xmark > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "558fdcc0-709b-4e8f-8ceb-83376a3ab396",
+      "comment": "Check if Alert has been hidden",
+      "command": "assertElementNotPresent",
+      "target": "css=.fade > div",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "19900967-16ca-4fe3-9743-2b8af553b5e7",
+      "comment": "------------------------------ END ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e952ae34-2d35-420e-8079-e02767495bcb",
+    "name": "Portfolio Contact Form in Spanish Language",
+    "commands": [{
+      "id": "bb374a8c-4953-402b-bfaa-9db0d7c7bd90",
+      "comment": "Open page",
+      "command": "open",
+      "target": "https://husdady.netlify.app",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "914f62b1-3e38-42be-83e3-4eb9a224198a",
+      "comment": "Define window size",
+      "command": "setWindowSize",
+      "target": "1366x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9d66aa1d-72ee-44bc-9e3f-1d3e548ccdbf",
+      "comment": "------------------------------ LANGUAGE ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a5323f2-42bc-48cc-a352-e020f957d4e1",
+      "comment": "Get language",
+      "command": "executeScript",
+      "target": "const lang = window.localStorage.getItem(\"lang\"); return JSON.parse(lang);",
+      "targets": [],
+      "value": "lang"
+    }, {
+      "id": "2fd4f622-c767-4417-a185-57dc44a465fb",
+      "comment": "If current language is not Spanish",
+      "command": "if",
+      "target": "${lang} !== \"ES\"",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2458db2d-1760-4b82-9f7d-09a772b36f20",
+      "comment": "Active Spanish language",
+      "command": "click",
+      "target": "xpath=//section[@id='languages']/ul/li/img",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3fe2761-4142-4f49-a430-c21f6ad403b4",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f78ff24f-0b3d-417c-8961-1d25142f41a3",
+      "comment": "Spanish flag is active",
+      "command": "assertElementPresent",
+      "target": "xpath=//section[@id='languages']/ul/li[contains(@class, 'opacity-100')]",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c515d7d-b87b-4160-b25a-84dedb71058c",
+      "comment": "USA flag is desactive",
+      "command": "assertElementPresent",
+      "target": "xpath=//section[@id='languages']/ul/li[2][contains(@class, 'opacity-25')]",
+      "targets": [
+        ["css=.opacity-100 > .scale", "css:finder"],
+        ["xpath=//img[@alt='spain']", "xpath:img"],
+        ["xpath=//section[@id='languages']/ul/li/img", "xpath:idRelative"],
+        ["xpath=//li/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0dc089d-6b96-49b2-a3c7-2568e609a9ed",
+      "comment": "------------------------------ CONTACT FORM IS EMPTY ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2ae517bc-fcca-4aec-bf69-2749f25b810b",
+      "comment": "Select Contact tab",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[4]/a",
+      "targets": [
+        ["linkText=Proyects", "linkText"],
+        ["css=.nav-item:nth-child(2) > .bg-transparent", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proyects')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a57a724-b8b0-417d-8424-d30e2aec2776",
+      "comment": "Check tab Contact is actived",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/ul/li[4]/a[contains(@class, 'active')]",
+      "targets": [
+        ["linkText=Skills", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skills')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "69b0d40a-09d3-471e-99bc-533ecd1cd9e8",
+      "comment": "Check 'fullname' field is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a18a6d50-2348-4a63-a1cb-cb4fbe35b978",
+      "comment": "Check 'email' field is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(2)",
+      "targets": [
+        ["css=.form-control:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@value=''])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e21b9d53-8da7-48fc-a129-31b58effb847",
+      "comment": "Check 'message' field is empty",
+      "command": "assertValue",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "904645ba-83b4-491c-b202-9b9c2851c18c",
+      "comment": "------------------------------ CONTACT FORM SUBMIT ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2d881eb0-ad7d-4767-bfd1-19524132b078",
+      "comment": "Scroll 100 bottom page",
+      "command": "executeScript",
+      "target": "window.scrollTo(0, 100)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "133f8122-9187-400f-b5d5-bfacd06b851a",
+      "comment": "Check submit button",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'Descargar curriculum')]",
+      "targets": [
+        ["css=.px-4 > .ms-2", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/section[2]/a/button/span", "xpath:idRelative"],
+        ["xpath=//a/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Download curriculum')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a1a23d7-7ef7-4e4e-b780-4ab39385afbc",
+      "comment": "Submit form",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/button",
+      "targets": [
+        ["css=.mt-4", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Send message')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9562a68e-5663-4501-ba8a-8e36dfec17b0",
+      "comment": "Check 'fullname' field error",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div",
+      "targets": [
+        ["css=.ps-2:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ce030ac-fc38-456f-9926-6b05919d412d",
+      "comment": "Check 'fullname' field error icon",
+      "command": "assertElementPresent",
+      "target": "css=.ps-2:nth-child(2) path",
+      "targets": [
+        ["css=.ps-2:nth-child(2) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "48277bb0-c6ed-4efc-a4d6-057e4523ab24",
+      "comment": "Check 'fullname' field error title when is empty",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [],
+      "value": "Por favor ingresa tu nombre completo"
+    }, {
+      "id": "9c459e0b-2937-43e5-8205-2a84aca324e0",
+      "comment": "Check 'email' field error",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div[2]",
+      "targets": [
+        ["css=.ps-2:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2926c83d-c525-414b-ac42-259943a74e91",
+      "comment": "Check 'email' field error icon",
+      "command": "assertElementPresent",
+      "target": "css=.ps-2:nth-child(4) path",
+      "targets": [
+        ["css=.ps-2:nth-child(4) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "da075eba-6945-41f3-abcc-fc522246fa50",
+      "comment": "Check 'email' field error title when is empty",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div[2]/small",
+      "targets": [
+        ["css=.ps-2:nth-child(4) > small", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div[2]/small", "xpath:idRelative"],
+        ["xpath=//div[2]/small", "xpath:position"],
+        ["xpath=//small[contains(.,'Please enter your email')]", "xpath:innerText"]
+      ],
+      "value": "Por favor ingresa tu correo electrónico"
+    }, {
+      "id": "e49a3889-895d-48ff-a994-7ae8e6b14a41",
+      "comment": "Check 'message' field error",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div[3]",
+      "targets": [
+        ["css=.ps-2:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div[3]", "xpath:idRelative"],
+        ["xpath=//form/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfdb2c7b-ba28-4dae-9013-8ca878b00573",
+      "comment": "Check 'message' field error icon",
+      "command": "assertElementPresent",
+      "target": "css=.ps-2:nth-child(6) path",
+      "targets": [
+        ["css=.ps-2:nth-child(6) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "de80985d-a6f4-4c3c-aacb-9a09f4099835",
+      "comment": "Check 'message' field error title when is empty",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div[3]/small",
+      "targets": [
+        ["css=.ps-2:nth-child(6) > small", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div[3]/small", "xpath:idRelative"],
+        ["xpath=//div[3]/small", "xpath:position"],
+        ["xpath=//small[contains(.,'Please enter a optional message')]", "xpath:innerText"]
+      ],
+      "value": "Por favor ingresa un mensaje opcional"
+    }, {
+      "id": "ec59c22a-fe4d-458c-89ab-e7f22d4ede40",
+      "comment": "------------------------------ UPDATE 'fullname' FIELD ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a02d6cb-c1c2-45a6-92c0-840c3f0c8dd4",
+      "comment": "Update 'fullname' field with 2 characters",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "HU"
+    }, {
+      "id": "ff03b570-2566-4fe9-a672-91c14a2c6251",
+      "comment": "Check 'fullname' field error min length",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [],
+      "value": "No existen nombres que tengan menos de 3 carácteres"
+    }, {
+      "id": "37c3c19b-0149-4e59-afa7-31cfec0e653e",
+      "comment": "Update 'fullname' field with more 32 characters",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+    }, {
+      "id": "6fbe5537-de99-46f4-b2f1-d7f1faf91d6b",
+      "comment": "Check 'fullname' field error max length",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [],
+      "value": "Ingresa un nombre que tenga como máximo 32 carácteres"
+    }, {
+      "id": "14ad38dc-1430-4e18-8e67-deb707fc888a",
+      "comment": "Update 'fullname' field",
+      "command": "type",
+      "target": "css=.form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Husdady"
+    }, {
+      "id": "34a20b0c-c79b-4af0-b108-a1dbc16104ae",
+      "comment": "Check 'fullname' field error has been hidden",
+      "command": "assertElementNotPresent",
+      "target": "css=.ps-2:nth-child(2)",
+      "targets": [
+        ["css=.ps-2:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac147f4c-a53d-46fe-90e2-e35576bfef23",
+      "comment": "------------------------------ UPDATE 'email' FIELD ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7103fb41-56e2-4315-94e4-7a3bade40001",
+      "comment": "Update 'email' field with wrong email",
+      "command": "type",
+      "target": "css=.form-control:nth-child(2)",
+      "targets": [
+        ["css=.form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "husdadymena"
+    }, {
+      "id": "82b301d5-9714-4ec0-8fa4-aa7a1b529175",
+      "comment": "Check 'email' field error wrong email",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [
+        ["css=.ps-2:nth-child(3) > small", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div/small", "xpath:idRelative"],
+        ["xpath=//small", "xpath:position"],
+        ["xpath=//small[contains(.,'Please enter a valid email')]", "xpath:innerText"]
+      ],
+      "value": "Por favor ingresa un correo electrónico válido"
+    }, {
+      "id": "9fe99c6b-f436-4c2d-8b7b-42c5748b1c38",
+      "comment": "Update 'email' field",
+      "command": "type",
+      "target": "css=.form-control:nth-child(2)",
+      "targets": [
+        ["css=.form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "husdadymena@gmail.com"
+    }, {
+      "id": "36d19d97-927e-47ae-8cb6-cfd28a553ba1",
+      "comment": "Check 'email' field error has been hidden",
+      "command": "assertElementNotPresent",
+      "target": "css=.ps-2:nth-child(3)",
+      "targets": [
+        ["css=.ps-2:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3fe20294-03b4-4230-8d7a-4a7934977a20",
+      "comment": "------------------------------ UPDATE 'message' FIELD ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "24497d86-eec9-48fb-82a0-318b7ced569f",
+      "comment": "Update 'message' field with short message",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "optional message"
+    }, {
+      "id": "230b3e86-a54f-495c-b880-58162fae5ba6",
+      "comment": "Check 'message' field error min length",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [
+        ["css=small", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div/small", "xpath:idRelative"],
+        ["xpath=//small", "xpath:position"],
+        ["xpath=//small[contains(.,'The optional message must have 100 characters at the least')]", "xpath:innerText"]
+      ],
+      "value": "El mensaje opcional debería tener 100 carácteres como mínimo"
+    }, {
+      "id": "3bbed407-7b24-4421-8c70-09c340ca7f95",
+      "comment": "Update 'message' field with largest message",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    }, {
+      "id": "c843d3ee-656b-42d9-acef-e3f49ff9cd4c",
+      "comment": "Check 'message' field error max length",
+      "command": "assertText",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/div/small",
+      "targets": [
+        ["css=small", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div/small", "xpath:idRelative"],
+        ["xpath=//small", "xpath:position"],
+        ["xpath=//small[contains(.,'The optional message must have 100 characters at the least')]", "xpath:innerText"]
+      ],
+      "value": "El mensaje opcional debería tener 500 carácteres como máximo"
+    }, {
+      "id": "d6937624-5e92-456a-adee-eb6af486630b",
+      "comment": "Update 'message' field",
+      "command": "type",
+      "target": "css=.form-control:nth-child(3)",
+      "targets": [
+        ["css=.form-control:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    }, {
+      "id": "58b8d2ff-5c8f-44b3-ba6c-9e0d4e1d24e2",
+      "comment": "Check 'message' field error has been hidden",
+      "command": "assertElementNotPresent",
+      "target": "css=.ps-2",
+      "targets": [
+        ["css=.ps-2", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "47f8cbc3-3545-4fa3-9c46-81c701355218",
+      "comment": "------------------------------ SUBMIT FORM ------------------------------",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f5d5076-91a8-4dda-9f27-0a570fb5f1da",
+      "comment": "Submit form",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/button",
+      "targets": [
+        ["css=.mt-4", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Send message')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b03d46f-5966-4a1c-a693-c346af46b3f8",
+      "comment": "Check if loading is showing inside the button",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@id='root']/main/section[2]/section/div/form/button/span[contains(@class, 'spinner-border')]",
+      "targets": [
+        ["css=.ms-auto", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Send message')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2cd61d47-f8ce-43a8-b23e-c4f98fc2826a",
+      "comment": "Check if Alert is showing",
+      "command": "waitForElementVisible",
+      "target": "css=.fade > div",
+      "targets": [
+        ["css=.fade > div", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "aaf8ce2d-3bc7-4909-b8c2-0b61603f5ab3",
+      "comment": "Check Alert title",
+      "command": "verifyText",
+      "target": "css=.title-custom-alert",
+      "targets": [
+        ["css=.title-custom-alert", "css:finder"],
+        ["xpath=//div[@id='root']/main/section[2]/section/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Your message was successfully sent to my personal email')]", "xpath:innerText"]
+      ],
+      "value": "Tu mensaje fue enviado exitosamente a mi correo personal"
+    }, {
+      "id": "e443795c-0303-4cb0-bce2-c9d7758b2752",
+      "comment": "Check Alert success icon",
+      "command": "verifyElementPresent",
+      "target": "css=.fa-circle-check",
+      "targets": [
+        ["css=.fa-circle-check", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ab3563b-9622-4c35-b60c-2cef74bfa376",
+      "comment": "Check Alert close icon",
+      "command": "verifyElementPresent",
+      "target": "css=.fa-circle-xmark",
+      "targets": [
+        ["css=.fa-circle-xmark > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "25de0183-0fc5-4e4f-aca1-9974a3a61c1a",
+      "comment": "Close Alert",
+      "command": "click",
+      "target": "css=.fa-circle-xmark",
+      "targets": [
+        ["css=.fa-circle-xmark > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3c3f95b-33ad-4b9d-aad5-555621483f71",
+      "comment": "Check if Alert has been hidden",
+      "command": "assertElementNotPresent",
+      "target": "css=.fade > div",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "7cb3ca9d-04e1-44b5-b42d-d2a4dedf7ff8",
+      "comment": "------------------------------ END ------------------------------",
       "command": "",
       "target": "",
       "targets": [],
